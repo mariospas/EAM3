@@ -4,8 +4,14 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="scripts/drop_down_log_in.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+<script src="scripts/lean-slider.js"></script>
+<link rel="stylesheet" href="css/lean-slider.css" type="text/css" />
+<link rel="stylesheet" href="css/slider-style.css" type="text/css" />
+
+
 </head>
 
 <body>
@@ -54,23 +60,49 @@
     <div id="mid">
     	<div id="gen_menu">
         	<div id="button_small">
-         	<h4><strong>Αρχική Σελίδα</strong></h4>
+         	<a href="#"><h4><strong>Αρχική Σελίδα</strong></h4></a>
             </div>
             
             <div id="button_small">
-            <h4><strong>Συγγράμματα Σχολών</strong></h4> 
+            <a href="#"><h4><strong>Συγγράμματα Σχολών</strong></h4></a> 
             </div>
             
             <div id="button_small">
-            <h4><strong>Επικοινωνία</strong></h4>
+            <a href="#"><h4><strong>Επικοινωνία</strong></h4></a>
             </div>
             
             <div id="button_small">
-            <h4><strong>Συχνές ερωτήσεις</strong></h4>
+            <a href="#"><h4><strong>Συχνές ερωτήσεις</strong></h4></a>
             </div>
         </div>
         
         <div id="banner">
+        
+            <div class="slider-wrapper">
+                <div id="slider">
+                    <div class="slide1">
+                        <img src="images/banner_arxiki_selida/1.jpg" alt="" />
+                    </div>
+                    <div class="slide2">
+                        <img src="images/banner_arxiki_selida/2.jpg" alt="" />
+                    </div>
+                </div>
+                <div id="slider-direction-nav"></div>
+                <div id="slider-control-nav"></div>
+            </div>
+            
+            <script type="text/javascript">
+            $(document).ready(function() {
+                var slider = $('#slider').leanSlider({
+                    directionNav: '#slider-direction-nav',
+                    controlNav: '#slider-control-nav'
+                });
+            });
+            </script>
+            
+        
+        
+        
         </div>   
         
         <div id="info">        	
@@ -81,7 +113,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;(β) Δυνατότητα άμεσης παραλαβής των Συγγραμμάτων και<br/>
 &nbsp;&nbsp;&nbsp;&nbsp;(γ) Αποτελεσματικούς μηχανισμούς για την ταχεία αποζημίωση των Εκδοτώνκαι για την αποτροπή<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;της καταχρηστικής εκμετάλλευσης των δημόσιων πόρων</p>
             <div id="button_spe">
-            <h4><strong>Περισσότερες Πληροφορίες</strong></h4>
+            <a href="#"><h2><strong>Περισσότερες Πληροφορίες</strong></h2></a>
             </div>
         </div>
         
