@@ -5,7 +5,7 @@
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-<script src="dokimastika/dok.js"></script>
+<script src="scripts/drop_down_log_in.js"></script>
 </head>
 
 <body>
@@ -21,14 +21,13 @@
         <div id="get_in">
 
                 <nav>
-                  <ul>
-                   
+                  <ul>                   
                     <li id="signup">
-                      <a href="">Εγγραφή</a>
+                      <a href=""><h3>Εγγραφή</h3></a>
                     </li>
                      <li id="login">
                       <a id="login-trigger" href="#">
-                        Σύνδεση 
+                        <h3>Σύνδεση </h3>
                       </a>
                       <div id="login-content">
                         <form>
@@ -41,6 +40,7 @@
                           <div id="actions">
                             <input type="submit" id="submit" value="Είσοδος">
                             <label><input type="checkbox" checked="checked"> Να παραμείνω συνδεδεμένος</label>
+                            <a href="#"><label>Ξεχάσατε τον κωδικό σας;</label></a>
                           </div>
                         </form>
                       </div>                     
