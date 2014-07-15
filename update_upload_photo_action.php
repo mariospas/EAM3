@@ -3,7 +3,21 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
+<link rel="stylesheet" href="css/cropCSS.css" type="text/css" />
+<style>
+
+#cropBTN
+{
+	color:#F4080C;
+	font-size:24px;
+	background-color:#C8E90C;
+}
+
+</style>
+
 </head>
+
+<body onLoad="init()">
 
 
 <?php
@@ -47,16 +61,53 @@
 	
 		//Tells you if its all ok
 		echo "The file ". basename( $_FILES['uploadedfile']['name']). " has been uploaded, and your information has been added to the directory";
+		echo "<br>";
+		echo $target;
+		echo "<br>";
+		//echo "<img id=\"html5\" src=\"{$target}\" />";
+		echo "<br>";
+		echo "<br>";
+		
+		echo "<canvas id=\"canvas1\" width=\"400\" height=\"408\" style=\"border: 1px solid black; background:url({$target}); 					background-repeat:no-repeat;\">
+				This text is displayed if your browser does not support HTML5 Canvas.
+			  </canvas>
+			  <input type=\"button\" id=\"cropBTN\" value=\"Crop Image\">
+			
+			  <canvas id=\"canvasDestination\" width=\"400\" height=\"408\" style=\"border: 1px solid black;\">
+				This text is displayed if your browser does not support HTML5 Canvas.
+			  </canvas>
+			
+			  <img src=\"{$target}\" id=\"srcIMG\" width=\"0\" height=\"0\" />
+			
+			  <div style=\"position: absolute;top: 10px; left: 10px; width: 0px; height: 0px; z-index: 5;\" class=\"mod marchingants2\" id=\"testAnt\">
+				<div class=\"inner\">
+					<div class=\"hd\"></div>
+					<div class=\"bd\"></div>
+					<div class=\"ft\"></div>
+				</div>
+			  </div>
+			
+			  <div style=\"font-family: Verdana; font-size: 12px;\">
+				  <p>Drag Over the Image and Press \"Crop Image\"</p>
+				  <p><a href=\"http://simonsarris.com/blog/510-making-and-moving-selectable-shapes-on-an-html5-canvas-updated\">link to tutorial</a></p>
+			      <p>By <a href=\"http://www.designscripting.com\">designscripting.com</a></p>
+			</div>
+		";
+
+
 	}
 	else {
 	
 		//Gives and error if its not
 		echo "Sorry, there was a problem uploading your file.";
 	}
+	
+	
 ?>
 
+<script src="scripts/cropJavaScript.js"></script>
 
 
-<body>
+
 </body>
 </html>
