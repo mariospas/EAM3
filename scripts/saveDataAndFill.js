@@ -25,3 +25,4 @@ function rescuefieldvalues(idarray){
 		} //onkeyup
 	} //for loop
 }
+

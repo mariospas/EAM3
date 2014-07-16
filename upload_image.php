@@ -53,6 +53,7 @@
 
 <script type="text/javascript">
 
+
 rescuefieldvalues(['name', 'bandMember', 'textArea'])
 
 </script>
