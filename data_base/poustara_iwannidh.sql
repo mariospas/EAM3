@@ -1,7 +1,8 @@
 CREATE TABLE IF NOT EXISTS `eam3`.`Idrumata` (
   `onoma_idrumatos` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
   PRIMARY KEY (`onoma_idrumatos`))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Grammateia` (
@@ -32,7 +33,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Bibliopwleia` (
   PRIMARY KEY (`idBibliopwleia`),
   UNIQUE INDEX `idBibliopwleia_UNIQUE` (`idBibliopwleia` ASC),
   UNIQUE INDEX `e_mail_UNIQUE` (`e_mail` ASC))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Suggrammata` (
@@ -54,7 +56,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Suggrammata` (
   PRIMARY KEY (`ISBN`, `kwdikos_bibliou`),
   UNIQUE INDEX `ISBN_UNIQUE` (`ISBN` ASC),
   UNIQUE INDEX `kwdikos_bibliou_UNIQUE` (`kwdikos_bibliou` ASC))
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Mathhmata` (
@@ -69,7 +72,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Mathhmata` (
     REFERENCES `eam3`.`Grammateia` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Arithmoi_mhtrwou` (
@@ -82,7 +86,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Arithmoi_mhtrwou` (
     REFERENCES `eam3`.`Grammateia` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes` (
@@ -106,7 +111,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes` (
     REFERENCES `eam3`.`Arithmoi_mhtrwou` (`a_m`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Bibliopwleia_has_Suggrammata` (
@@ -127,7 +133,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Bibliopwleia_has_Suggrammata` (
     REFERENCES `eam3`.`Suggrammata` (`ISBN` , `kwdikos_bibliou`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Grammateia_has_Suggrammata` (
@@ -168,7 +175,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Suggrammata_has_Mathhmata` (
     REFERENCES `eam3`.`Mathhmata` (`kwdikos_mathhmatos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes_has_Mathhmata` (
@@ -188,7 +196,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes_has_Mathhmata` (
     REFERENCES `eam3`.`Mathhmata` (`kwdikos_mathhmatos`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes_has_Suggrammata` (
@@ -212,7 +221,8 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes_has_Suggrammata` (
     REFERENCES `eam3`.`Foithtes` (`onoma_xrhsth` , `Arithmoi_mhtrwou_a_m`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
 
 
 
