@@ -32,14 +32,14 @@
 	echo "<br>";
 	
 	//This gets all the other information from the form
-	/*
+	
 	$name=$_POST['nameMember'];
 	$bandMember=$_POST['bandMember'];
-	$pic=($_FILES['photo']['name']);
-	$about=$_POST['aboutMember'];
-	$bands=$_POST['otherBands'];
+	//$pic=($_FILES['photo']['name']);
+	//$about=$_POST['aboutMember'];
+	//$bands=$_POST['otherBands'];
 	
-	*/
+	
 	// Connects to your Database
 	$con = mysql_connect("localhost", "root", "134711Kk");
 
@@ -49,11 +49,17 @@
 	}
 	//mysql_select_db("dbName") or die(mysql_error()) ;
 	
-	/*
+	
 	//Writes the information to the database
-	mysql_query("INSERT INTO tableName (nameMember,bandMember,photo,aboutMember,otherBands)
-	VALUES ('$name', '$bandMember', '$pic', '$about', '$bands')") ;
-	*/
+	mysql_query("INSERT INTO `eam3`.`Grammateia`
+				(`id`,
+				`idruma`,
+				`tmhma`)
+				VALUES
+				(1,
+				{$name},
+				{$bandMembe});") ;
+	
 	
 	//Writes the photo to the server
 	if(move_uploaded_file($_FILES['photo']['tmp_name'], $target))
