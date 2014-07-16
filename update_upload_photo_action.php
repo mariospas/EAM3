@@ -22,6 +22,9 @@
 
 <?php
 
+	// Connects to your Database
+	$con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
+	
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
 
@@ -38,27 +41,36 @@
 	//$pic=($_FILES['photo']['name']);
 	//$about=$_POST['aboutMember'];
 	//$bands=$_POST['otherBands'];
-	
-	
-	// Connects to your Database
-	$con = mysql_connect("localhost", "root", "134711Kk");
+		
 
 	if(!$con)
 	{
-		die("Connection Failed".mysql_error());		
+		die("Connection Failed".mysqli_error());		
 	}
 	//mysql_select_db("dbName") or die(mysql_error()) ;
 	
+	//mysql_select_db("eam3", $con);
 	
 	//Writes the information to the database
-	mysql_query("INSERT INTO `eam3`.`Grammateia`
-				(`id`,
-				`idruma`,
-				`tmhma`)
-				VALUES
-				(1,
-				{$name},
-				{$bandMembe});") ;
+	
+	echo "$name" . " " . "$bandMember" . "<br/>";
+	
+	$sql = 	"INSERT INTO Grammateia(id, idruma, tmhma) VALUES ('4', '$name', '$bandMember');";
+				
+	 $some = mysqli_query($con,$sql);
+	 if (!$some) 
+	 {
+			echo "Yparxei" . "<br/>";
+	 }
+
+    $request = mysqli_query($con,"SELECT * FROM eam3.Grammateia");
+
+    while ($row = mysqli_fetch_array($request))
+    {   
+        extract($row);
+        echo "$id" . " " . "$idruma" . " " . "$tmhma" . "<br/>";
+    }
+
 	
 	
 	//Writes the photo to the server
@@ -108,10 +120,12 @@
 		echo "Sorry, there was a problem uploading your file.";
 	}
 	
-	
+	mysqli_close($con);
 ?>
 
 <script src="scripts/cropJavaScript.js"></script>
+
+
 
 
 
