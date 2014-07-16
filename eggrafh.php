@@ -5,6 +5,7 @@
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <script type="text/javascript" src="./scripts/javs.js"></script>
+<script src="scripts/saveDataAndFill.js"></script>
 </head>
 
 <body>
@@ -22,39 +23,54 @@
         </div>
         
         <div id="main_form">
-        	<form>
-            	<p><label for="username">Όνομα :</label>
-				<input type="text" size="42" name="username" /></p>
+        	<form method="post" action="update_upload_photo_action.php" enctype="multipart/form-data">
+            	<p><label>Όνομα :</label>
+				<input type="text" id="onoma" name="onoma" /></p>
                 <br/>
-                <p><label for="username">Επίθετο :</label>
-				<input type="text" size="42" name="username" /></p>
+                <p><label>Επίθετο :</label>
+				<input type="text" id="epitheto" name="epitheto" /></p>
                 <br/>
-                 <p><label for="username">Όνομα χρήστη (της επιλογής σας) :</label>
-				<input type="text" size="42" name="username" /></p>
+                 <p><label>Όνομα χρήστη (της επιλογής σας) :</label>
+				<input type="text" id="onomaxristi" name="onomaxristi" /></p>
                 <br/>
-                 <p><label for="username">e-mail :</label>
-				<input type="text" size="42" name="username" /></p>
+                 <p><label>e-mail :</label>
+				<input type="text" id="taxudromio" name="taxudromio"  /></p>
                 <br/>
-                <p><label for="password">Κωδικός πρόσβασης :</label>
-				<input type="password" size="42" name="password" /></p>
+                <p><label>Κωδικός πρόσβασης :</label>
+				<input type="password" id="kodikos" name="kodikos"  /></p>
                 <br/>
-                <p><label for="password">Επιβεβαίωση κωδικού πρόσβασης :</label>
-				<input type="password" size="42" name="password" /></p>
+                <p><label>Επιβεβαίωση κωδικού πρόσβασης :</label>
+				<input type="password" id="epib_kodikos" name="epib_kodikos"  /></p>
                 <br/>
-                <p><label for="password">* Τηλέφωνο :</label>
-				<input type="text" size="42" name="username" /></p>
+                <p><label>* Τηλέφωνο :</label>
+				<input type="text" id="thl" name="thl"  /></p>
                 <br/>
-                <p><label for="role">Ρόλος στην ιστοσελίδα :</label>
+                <p><label>* Φωτογραφία :</label>
+                <input type="hidden" name="size" value="350000">
+                <input type="file" name="photo"> </p>
                 <br/>
-                <select name="role">
-                    <option value="None"> </option>
-                    <option value="foithths">Φοιτητές</option>
-                    <option value="ekdoths">Εκδότες</option>
-                    <option value="grammateia">Γραμματεία</option>
-                    <option value="diaxeirisths">Διαχειριστές</option>
+                <p><label>Ρόλος στην ιστοσελίδα :</label>
+                <br/>
+                <select id="rolos" name="role">
+                    <option id="None" name="None" value="None"> </option>
+                    <option id="foithths" name="foithths" value="foithths">Φοιτητές</option>
+                    <option id="ekdoths" name="ekdoths" value="ekdoths">Εκδότες</option>
+                    <option id="grammateia" name="grammateia" value="grammateia">Γραμματεία</option>
+                    <option id="diaxeirisths" name="diaxeirisths" value="diaxeirisths">Διαχειριστές</option>
                 </select></p>
             </form>
         </div> 
+       
+       <script>
+	   
+	   $('#rolos').on('keyup', function () {
+			if ($(this).val() == $('#foithths').val()) {
+				$('#extra_form').css('display', 'block');
+			} else $('#message').html('not matching').css('color', 'red');
+		});
+		
+		</script>
+		
         
         <div id="extra_form">
             <div id="main_form">
@@ -74,7 +90,7 @@
                     </select></p>
                     <br/>
                     <p><label for="username">Αριθμός μητρώου :</label>
-                    <input type="text" size="42" name="username" /></p>
+                    <input type="text" name="username" /></p>
                     <br/>
                     <p><label for="tmhma">Εξάμηνο :</label>
                     <select name="tmhma">
@@ -86,6 +102,12 @@
             </div>       
         </div>
         
+        <script type="text/javascript">
+		
+			rescuefieldvalues(['onoma', 'epitheto', 'onomaxristi', 'taxudromio', 'thl', 'rolos']);
+		
+		</script>
+        
         <div id="form_footer">        
             <div id="sub_button">
             Εγγραφή
@@ -94,7 +116,9 @@
         <br/>
         <p style="font-size:13px; color:#999;">(*) Δεν είναι υποχρεωτική η συμπλήρωση αυτού του πεδίου.</p>
     </div>
-	<?php include("downer_footer.php"); ?>
+    <div style="margin-top:-140px; background-color:#DBDBDB;">
+		<?php include("downer_footer.php"); ?>
+    </div>
     <?php include("copyrights.php"); ?>
 </div>
 

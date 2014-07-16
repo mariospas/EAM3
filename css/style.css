@@ -61,6 +61,8 @@ p
 input
 {
 	padding:5px;
+	width:280px;
+	height:20px;
 }
 
 input[type=submit]
@@ -591,7 +593,7 @@ select
 
 #extra_form
 {
-	display:block;
+	display:none;
 }
 
 #form_footer
