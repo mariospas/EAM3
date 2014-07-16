@@ -6,7 +6,6 @@
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="scripts/drop_down_log_in.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="scripts/lean-slider.js"></script>
 <link rel="stylesheet" href="css/lean-slider.css" type="text/css" />
 <link rel="stylesheet" href="css/slider-style.css" type="text/css" />

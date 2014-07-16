@@ -591,7 +591,7 @@ select
 	color:#2E91C0;
 }
 
-#extra_form
+#extra_form1
 {
 	display:none;
 }
@@ -624,6 +624,11 @@ select
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 	border-radius: 8px;	
+}
+
+
+:invalid {
+     border: 2px solid #ff0000;
 }
 
 

@@ -4,8 +4,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
-<script type="text/javascript" src="./scripts/javs.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="scripts/saveDataAndFill.js"></script>
+<script src="scripts/checkTwoPass.js"></script>
+<script>
+	$(function() {
+	
+		$("#text-one").change(function() {
+			$("#text-two").load("textdata/" + $(this).val() + ".txt");
+		});
+		
+	
+
+	});
+</script>
+
+
+		
 </head>
 
 <body>
@@ -37,10 +52,10 @@
 				<input type="text" id="taxudromio" name="taxudromio"  /></p>
                 <br/>
                 <p><label>Κωδικός πρόσβασης :</label>
-				<input type="password" id="kodikos" name="kodikos"  /></p>
+				<input type="password" id="password" name="password"  /></p>
                 <br/>
                 <p><label>Επιβεβαίωση κωδικού πρόσβασης :</label>
-				<input type="password" id="epib_kodikos" name="epib_kodikos"  /></p>
+				<input type="password" id="passwordconf" name="passwordconf" oninput="check(this)"  /></p>
                 <br/>
                 <p><label>* Τηλέφωνο :</label>
 				<input type="text" id="thl" name="thl"  /></p>
@@ -51,68 +66,74 @@
                 <br/>
                 <p><label>Ρόλος στην ιστοσελίδα :</label>
                 <br/>
-                <select id="rolos" name="role">
-                    <option id="None" name="None" value="None"> </option>
+                <!--<select id="rolos" name="role">
+                	<option selected="selected" ></option>
                     <option id="foithths" name="foithths" value="foithths">Φοιτητές</option>
                     <option id="ekdoths" name="ekdoths" value="ekdoths">Εκδότες</option>
                     <option id="grammateia" name="grammateia" value="grammateia">Γραμματεία</option>
                     <option id="diaxeirisths" name="diaxeirisths" value="diaxeirisths">Διαχειριστές</option>
-                </select></p>
+                </select></p>-->
+                <select id="text-one">
+                    <option selected value="base">Please Select</option>
+                    <option value="beverages">Beverages</option>
+                    <option value="snacks">Snacks</option>
+                </select>
+                
+                <br />
+                
+                <select id="text-two">
+                    <option>Please choose from above</option>
+                </select>  
+                <br />
+                <div id="extra_form"></div>   <!-- write the dynamic html code here -->
             </form>
+                 
         </div> 
-       
-       <script>
-	   
-	   $('#rolos').on('keyup', function () {
-			if ($(this).val() == $('#foithths').val()) {
-				$('#extra_form').css('display', 'block');
-			} else $('#message').html('not matching').css('color', 'red');
-		});
-		
-		</script>
-		
         
-        <div id="extra_form">
-            <div id="main_form">
-            	<form>
-                	<p><label for="idruma">Ίδρυμα :</label>
-                    <select name="idruma">
+        
+        
+		<script src="scripts/foititesPopMenu.js"></script> <!-- helps to write the dynamic code only for foithtes now -->
+            
+            
+            
+            
+        <!--part of dynamic code START -->
+        <div id="extra_form1">
+            	
+                	<p><label>Ίδρυμα :</label>
+                    <select name="idruma"  >
                         <option value="None"> </option>
                         <option value="APTH">Αριστοτέλειο Πανεπιστήμιο Θεσ/νίκης</option>
                         <option value="EKPA">Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών</option>
                     </select></p>
                     <br/>
-                    <p><label for="tmhma">Τμήμα<p style="font-size:10px;">(Προηγείται συμπλήρωση του Ιδρύματος) :</p></label>
+                    <p><label >Τμήμα<p style="font-size:10px;">(Προηγείται συμπλήρωση του Ιδρύματος) :</p></label>
                     <select name="tmhma">
                         <option value="None"> </option>
                         <option value="DI">Πληροφορικής και Τηλεπικοινωνιών</option>
                         <option value="FIL">Φιλολογίας</option>
                     </select></p>
                     <br/>
-                    <p><label for="username">Αριθμός μητρώου :</label>
-                    <input type="text" name="username" /></p>
+                    <p><label >Αριθμός μητρώου :</label>
+                    <input type="text" id="arithmos_mhtroou" name="arithmos_mhtroou" /></p>
                     <br/>
-                    <p><label for="tmhma">Εξάμηνο :</label>
+                    <p><label >Εξάμηνο :</label>
                     <select name="tmhma">
                         <option value="None"> </option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                     </select></p>
-                </form>
-            </div>       
+                	<input TYPE="submit" name="upload" id="sub_button" title="Add data to the Database" value="Εγγραφή"/>
         </div>
+         <!--part of dynamic code FINISH -->
         
+        <!--Keep form data after refresh or redirect -->
         <script type="text/javascript">
 		
-			rescuefieldvalues(['onoma', 'epitheto', 'onomaxristi', 'taxudromio', 'thl', 'rolos']);
-		
+			rescuefieldvalues(['onoma', 'epitheto', 'onomaxristi', 'taxudromio', 'thl', 'arithmos_mhtroou']);
+			
 		</script>
         
-        <div id="form_footer">        
-            <div id="sub_button">
-            Εγγραφή
-            </div>
-        </div>
         <br/>
         <p style="font-size:13px; color:#999;">(*) Δεν είναι υποχρεωτική η συμπλήρωση αυτού του πεδίου.</p>
     </div>
