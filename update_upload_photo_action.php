@@ -31,14 +31,17 @@
 	//This is the directory where images will be saved
 	$target = "dokupload/";
 	$target = $target . basename( $_FILES['photo']['name']);
-	echo $target;
-	echo "<br>";
+	//echo $target;
+	//echo "<br>";
 	
 	//This gets all the other information from the form
 	
 	$name=$_POST['nameMember'];
 	$bandMember=$_POST['bandMember'];
-	//$pic=($_FILES['photo']['name']);
+	$pic=($_FILES['photo']['name']);
+	
+	echo "Pic = "."$pic";
+	echo "<br>";
 	//$about=$_POST['aboutMember'];
 	//$bands=$_POST['otherBands'];
 		
@@ -86,30 +89,19 @@
 		echo "<br>";
 		echo "<br>";
 		
-		echo "<canvas id=\"canvas1\" width=\"400\" height=\"408\" style=\"border: 1px solid black; background:url({$target}); 					background-repeat:no-repeat;\">
+		echo "<canvas id=\"canvas1\" width=\"50\" height=\"50\" style=\"background:url({$target}); background-repeat:no-repeat; background-size:50px 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;\">
 				This text is displayed if your browser does not support HTML5 Canvas.
 			  </canvas>
 			  <input type=\"button\" id=\"cropBTN\" value=\"Crop Image\">
 			
-			  <canvas id=\"canvasDestination\" width=\"400\" height=\"408\" style=\"border: 1px solid black;\">
-				This text is displayed if your browser does not support HTML5 Canvas.
-			  </canvas>
-			
-			  <img src=\"{$target}\" id=\"srcIMG\" width=\"0\" height=\"0\" />
-			
-			  <div style=\"position: absolute;top: 10px; left: 10px; width: 0px; height: 0px; z-index: 5;\" class=\"mod marchingants2\" id=\"testAnt\">
-				<div class=\"inner\">
-					<div class=\"hd\"></div>
-					<div class=\"bd\"></div>
-					<div class=\"ft\"></div>
-				</div>
-			  </div>
-			
-			  <div style=\"font-family: Verdana; font-size: 12px;\">
-				  <p>Drag Over the Image and Press \"Crop Image\"</p>
-				  <p><a href=\"http://simonsarris.com/blog/510-making-and-moving-selectable-shapes-on-an-html5-canvas-updated\">link to tutorial</a></p>
-			      <p>By <a href=\"http://www.designscripting.com\">designscripting.com</a></p>
-			</div>
+			  <form method=\"post\" action=\"update_upload_photo_action.php\" enctype=\"multipart/form-data\">
+				 <p>
+				   Αλλάξτε την φωτογραφία και προτιμότερο είναι να διλέξετε μια τετράγωνη εικόνα (π.χ 500x500)
+				 </p>
+				 <input type=\"hidden\" name=\"size\" value=\"3500000\">
+				 <input type=\"file\" name=\"photo\"> 
+				 <input TYPE=\"submit\" name=\"upload\" title=\"Add data to the Database\" value=\"Upload New Photo\"/>
+			  </form>
 		";
 
 
