@@ -45,7 +45,7 @@
 	$password=$_POST['password'];
 	$thl=$_POST['thl'];
 	$idrima=$_POST['idruma'];
-	$tmhma=$_POST['tmhma'];
+	$tmhma=$_POST['tmhma']; 
 	$aritmos_mhtroo=$_POST['arithmos_mhtroou'];
 	$eksamhno=$_POST['eksamhno'];
 	
