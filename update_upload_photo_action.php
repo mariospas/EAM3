@@ -36,12 +36,45 @@
 	
 	//This gets all the other information from the form
 	
-	$name=$_POST['nameMember'];
-	$bandMember=$_POST['bandMember'];
+	$name=$_POST['onoma'];
+	$epitheto=$_POST['epitheto'];     //bandMember
 	$pic=($_FILES['photo']['name']);
+	$role=$_POST['role'];
+	$username=$_POST['onomaxristi'];
+	$email=$_POST['taxudromio'];
+	$password=$_POST['password'];
+	$thl=$_POST['thl'];
+	$idrima=$_POST['idruma'];
+	$tmhma=$_POST['tmhma'];
+	$aritmos_mhtroo=$_POST['arithmos_mhtroou'];
+	$eksamhno=$_POST['eksamhno'];
 	
 	echo "Pic = "."$pic";
 	echo "<br>";
+	echo $name;
+	echo "<br>";
+	echo $epitheto;
+	echo "<br>";
+	echo $username;
+	echo "<br>";
+	echo $email;
+	echo "<br>";
+	echo $password;
+	echo "<br>";
+	echo $thl;
+	echo "<br>";
+	echo $role;
+	echo "<br>";
+	echo $idrima;
+	echo "<br>";
+	echo $tmhma;
+	echo "<br>";
+	echo $aritmos_mhtroo;
+	echo "<br>";
+	echo $eksamhno;
+	echo "<br>";
+
+	
 	//$about=$_POST['aboutMember'];
 	//$bands=$_POST['otherBands'];
 		
@@ -56,6 +89,7 @@
 	
 	//Writes the information to the database
 	
+	/*
 	echo "$name" . " " . "$bandMember" . "<br/>";
 	
 	$sql = 	"INSERT INTO Grammateia(id, idruma, tmhma) VALUES ('4', '$name', '$bandMember');";
@@ -112,6 +146,7 @@
 		//Gives and error if its not
 		echo "Sorry, there was a problem uploading your file.";
 	}
+	*/
 	
 	mysqli_close($con);
 ?>

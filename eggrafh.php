@@ -7,17 +7,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="scripts/saveDataAndFill.js"></script>
 <script src="scripts/checkTwoPass.js"></script>
-<script>
-	$(function() {
-	
-		$("#text-one").change(function() {
-			$("#text-two").load("textdata/" + $(this).val() + ".txt");
-		});
-		
-	
 
-	});
-</script>
 
 
 		
@@ -66,24 +56,55 @@
                 <br/>
                 <p><label>Ρόλος στην ιστοσελίδα :</label>
                 <br/>
-                <!--<select id="rolos" name="role">
+                <select id="rolos" name="role">
                 	<option selected="selected" ></option>
                     <option id="foithths" name="foithths" value="foithths">Φοιτητές</option>
                     <option id="ekdoths" name="ekdoths" value="ekdoths">Εκδότες</option>
                     <option id="grammateia" name="grammateia" value="grammateia">Γραμματεία</option>
                     <option id="diaxeirisths" name="diaxeirisths" value="diaxeirisths">Διαχειριστές</option>
-                </select></p>-->
-                <select id="text-one">
-                    <option selected value="base">Please Select</option>
-                    <option value="beverages">Beverages</option>
-                    <option value="snacks">Snacks</option>
-                </select>
+                </select></p>
+               
+               
+               <div id="openModal" class="modalDialog">
+                    <div>
+                        <a href="#close" title="Close" class="close">X</a>
+                        <p><label>Ίδρυμα :</label>
+                        <br />
+                        <select id="idruma" name="idruma"  >
+                            <option value="base"> </option>
+                            <option value="EKPA">Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών</option>
+                            <option value="PAPI">Πανεπιστήμιο Πειραιώς</option>
+                        </select></p>
+                        <br/>
+                        <p><label >Τμήμα :</label>
+                        <br />
+                        <select id="tmhma" name="tmhma">
+                            <option value="base">Προηγείται η συμπλήρωση του Ιδρύματος</option>
+                            
+                        </select></p>
+                         
+                        
+                        <br />
+                        
+                        <p><label >Αριθμός μητρώου :</label>
+                        <input type="text" id="arithmos_mhtroou" name="arithmos_mhtroou" /></p>
+                        <br />
+                        <p><label >Εξάμηνο :</label>
+                        <select id="eksamhno" name="eksamhno">
+                            <option value="None"> </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                        </select></p>
+                        <input TYPE="submit" name="upload" id="sub_button" title="Add data to the Database" value="Εγγραφή"/>
+                    </div>
+                </div>
+        
+        <!--alla divs kai modals gia to kathena ekdothss klp tha uparxoun-->
                 
-                <br />
-                
-                <select id="text-two">
-                    <option>Please choose from above</option>
-                </select>  
+ 
+ 
+ 
+ 
                 <br />
                 <div id="extra_form"></div>   <!-- write the dynamic html code here -->
             </form>
@@ -98,34 +119,16 @@
             
             
         <!--part of dynamic code START -->
-        <div id="extra_form1">
-            	
-                	<p><label>Ίδρυμα :</label>
-                    <select name="idruma"  >
-                        <option value="None"> </option>
-                        <option value="APTH">Αριστοτέλειο Πανεπιστήμιο Θεσ/νίκης</option>
-                        <option value="EKPA">Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών</option>
-                    </select></p>
-                    <br/>
-                    <p><label >Τμήμα<p style="font-size:10px;">(Προηγείται συμπλήρωση του Ιδρύματος) :</p></label>
-                    <select name="tmhma">
-                        <option value="None"> </option>
-                        <option value="DI">Πληροφορικής και Τηλεπικοινωνιών</option>
-                        <option value="FIL">Φιλολογίας</option>
-                    </select></p>
-                    <br/>
-                    <p><label >Αριθμός μητρώου :</label>
-                    <input type="text" id="arithmos_mhtroou" name="arithmos_mhtroou" /></p>
-                    <br/>
-                    <p><label >Εξάμηνο :</label>
-                    <select name="tmhma">
-                        <option value="None"> </option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                    </select></p>
-                	<input TYPE="submit" name="upload" id="sub_button" title="Add data to the Database" value="Εγγραφή"/>
+        	
+        <div id="FModel">
+            <a class="likable" href="#openModal">Επόμενο</a>
         </div>
-         <!--part of dynamic code FINISH -->
+
+        
+        
+        <!--alla divs kai modals gia to kathena ekdothss klp tha uparxoun-->
+       
+        <!--part of dynamic code FINISH -->
         
         <!--Keep form data after refresh or redirect -->
         <script type="text/javascript">
