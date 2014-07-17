@@ -26,7 +26,7 @@
     </div>
     <!--TELOS PANW MEROS-->
     
-    <!--ARXH KATW MEROS-->
+    <!--ARXH MESSAIO MEROS-->
     <div id="mid">
     
     	<?php include("include_with_php/gen_menu.php"); ?>  	

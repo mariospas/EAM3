@@ -763,3 +763,94 @@ select
 		width: 215px;
 	}
 }
+
+/************************************************************************************/
+
+#kefalides_selidwn
+{
+	margin-top:30px;
+	height:auto;
+	width:auto;
+	text-align:center;
+	color: #333;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:17px;
+	font-weight:bold;
+}
+
+#upokefalida
+{
+	margin-top:30px;
+	height:auto;
+	width:auto;
+	text-align:center;
+	color: #999;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:16px;
+}
+
+input#aplh_anazhthsh
+{
+	width:450px;	
+}
+
+input[type=submit]#sub_search
+{
+	margin:0px;
+	padding:0px;
+	margin-top:30px;
+	padding-left:10px;
+	padding-right:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+}
+
+#_search_
+{
+	margin-top:30px;
+	text-align:center;
+}
+
+#pros_sun
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	margin-top:20px;
+	color: #008ED3;
+}
+
+#aristerh_anazhthsh
+{
+	float:left;
+	heght:auto;
+	width:auto;
+}
+
+#deksia_anazhthsh
+{
+	float:right;
+	heght:auto;
+	width:auto;
+}
+
+#main_form_1
+{
+	width:auto;
+	height:480px;
+	padding-left:25px;
+	padding-right:25px;
+	margin-top:10px;
+	padding-top:10px;
+	padding-bottom:10px;
+	
+	background-color:#EBEBEB;
+	border:2px solid #2E91C0;
+	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	color:#2E91C0;
+	
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
