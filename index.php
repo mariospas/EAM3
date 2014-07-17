@@ -67,11 +67,15 @@
             </div>
             
             <div id="button_small">
+            <a href="#"><h4><strong>Αναζήτηση Συγγραμμάτων</strong></h4></a> 
+            </div>
+            
+            <div id="button_small">
             <a href="#"><h4><strong>Επικοινωνία</strong></h4></a>
             </div>
             
             <div id="button_small">
-            <a href="#"><h4><strong>Συχνές ερωτήσεις</strong></h4></a>
+            <a href="#"><h4><strong>FAQ</strong></h4></a>
             </div>
         </div>
         
