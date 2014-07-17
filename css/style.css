@@ -626,11 +626,11 @@ select
 	border-radius: 8px;	
 }
 
-
+/*
 :invalid {
      border: 2px solid #ff0000;
 }
-
+*/
 
 
 @media screen and (min--moz-device-pixel-ratio: 0) { 
