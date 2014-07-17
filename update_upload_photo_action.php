@@ -36,18 +36,33 @@
 	
 	//This gets all the other information from the form
 	
-	$name=$_POST['onoma'];
-	$epitheto=$_POST['epitheto'];     //bandMember
-	$pic=($_FILES['photo']['name']);
-	$role=$_POST['role'];
-	$username=$_POST['onomaxristi'];
-	$email=$_POST['taxudromio'];
-	$password=$_POST['password'];
-	$thl=$_POST['thl'];
-	$idrima=$_POST['idruma'];
-	$tmhma=$_POST['tmhma']; 
-	$aritmos_mhtroo=$_POST['arithmos_mhtroou'];
-	$eksamhno=$_POST['eksamhno'];
+	$name = $_POST['onoma'];
+	$epitheto = $_POST['epitheto'];     //bandMember
+	$pic = ($_FILES['photo']['name']);
+	$role = ($_POST['role']);
+	$username = ($_POST['onomaxristi']);
+	$email = ($_POST['taxudromio']);
+	$password = $_POST['password'];
+	$thl = ($_POST['thl']);
+	$idrima = ($_POST['idruma']);
+	$tmhma = ($_POST['tmhma']); 
+	$aritmos_mhtroo = ($_POST['arithmos_mhtroou']);
+	$eksamhno = ($_POST['eksamhno']);
+	
+	
+	$ext = substr($pic, strrpos($pic, '.') + 1);
+	echo "{$ext}";
+	echo "<br>";
+	
+	
+	if ( !  ($ext == "jpg")  or  ($ext == "jpeg")  or  ($ext == "png")   )
+	{
+		echo "Δεχόμαστε μόνο αρχεία με κατάληξη .jpg , .jpeg και .png .Παρακαλούμε προσπαθήστε ξανά!";
+		return;
+	}
+
+	
+	echo "<br>";
 	
 	echo "Pic = "."$pic";
 	echo "<br>";
@@ -73,6 +88,8 @@
 	echo "<br>";
 	echo $eksamhno;
 	echo "<br>";
+
+
 
 	
 	//$about=$_POST['aboutMember'];

@@ -7,6 +7,7 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="scripts/saveDataAndFill.js"></script>
 <script src="scripts/checkTwoPass.js"></script>
+<script src="scripts/checkFileSize.js"></script>
 
 
 
@@ -30,29 +31,29 @@
         <div id="main_form">
         	<form method="post" action="update_upload_photo_action.php" enctype="multipart/form-data">
             	<p><label>Όνομα :</label>
-				<input type="text" id="onoma" name="onoma" /></p>
+				<input type="text" id="onoma" name="onoma" required/></p>
                 <br/>
                 <p><label>Επίθετο :</label>
-				<input type="text" id="epitheto" name="epitheto" /></p>
+				<input type="text" id="epitheto" name="epitheto" required/></p>
                 <br/>
-                 <p><label>Όνομα χρήστη (της επιλογής σας) :</label>
-				<input type="text" id="onomaxristi" name="onomaxristi" /></p>
+                 <p><label>Όνομα χρήστη <p style="font-size:11px"><b>(με λατινικούς χαρακτήρες)</b>:</p></label>
+				<input type="text" id="onomaxristi" name="onomaxristi" required/></p>
                 <br/>
                  <p><label>e-mail :</label>
-				<input type="text" id="taxudromio" name="taxudromio"  /></p>
+				<input type="text" id="taxudromio" name="taxudromio"  required/></p>
                 <br/>
                 <p><label>Κωδικός πρόσβασης :</label>
-				<input type="password" id="password" name="password"  /></p>
+				<input type="password" id="password" name="password"  required/></p>
                 <br/>
                 <p><label>Επιβεβαίωση κωδικού πρόσβασης :</label>
-				<input type="password" id="passwordconf" name="passwordconf" oninput="check(this)"  /></p>
+				<input type="password" id="passwordconf" name="passwordconf" oninput="check(this)"  required/></p>
                 <br/>
                 <p><label>* Τηλέφωνο :</label>
 				<input type="text" id="thl" name="thl"  /></p>
                 <br/>
                 <p><label>* Φωτογραφία :</label>
-                <input type="hidden" name="size" value="350000">
-                <input type="file" name="photo"> </p>
+                <input type="hidden" name="size" value="1048576">
+                <input type="file" name="photo" id="i_file"> </p>
                 <br/>
                 <p><label>Ρόλος στην ιστοσελίδα :</label>
                 <br/>
@@ -87,7 +88,7 @@
                         <br />
                         
                         <p><label >Αριθμός μητρώου :</label>
-                        <input type="text" id="arithmos_mhtroou" name="arithmos_mhtroou" /></p>
+                        <input type="text" id="arithmos_mhtroou" name="arithmos_mhtroou" required/></p>
                         <br />
                         <p><label >Εξάμηνο :</label>
                         <select id="eksamhno" name="eksamhno">
