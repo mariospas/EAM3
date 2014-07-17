@@ -19,9 +19,9 @@
 	<!--ARXH PANW MEROS-->
 	<div id="header_gen">
     
-    	<?php include("logo.php"); ?>    	
+    	<?php include("include_with_php/logo.php"); ?>    	
         
-        <?php include("get_in.php"); ?>
+        <?php include("include_with_php/get_in.php"); ?>
         
     </div>
     <!--TELOS PANW MEROS-->
@@ -29,7 +29,7 @@
     <!--ARXH KATW MEROS-->
     <div id="mid">
     
-    	<?php include("gen_menu.php"); ?>  	
+    	<?php include("include_with_php/gen_menu.php"); ?>  	
         
         <div id="banner">
         
@@ -78,11 +78,11 @@ type="application/x-shockwave-flash">
     
     <!--ARXH KATW MEROS-->
     <div id="footer">    	
-		<?php include("stadar_bottom_menu_gen.php"); ?>         
-        <?php include("downer_footer.php"); ?>      
+		<?php include("include_with_php/stadar_bottom_menu_gen.php"); ?>         
+        <?php include("include_with_php/downer_footer.php"); ?>      
     </div>
     
-    <?php include("copyrights.php"); ?> 
+    <?php include("include_with_php/copyrights.php"); ?> 
     <!--TELOS KATW MEROS-->
 </div>
 
