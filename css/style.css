@@ -390,7 +390,6 @@ li
 
 #info
 {
-	margin-top:40px;
 	text-align:left;
 	height: auto;
 	width: auto;
@@ -854,3 +853,35 @@ input[type=submit]#sub_search
 	-moz-border-radius: 5px 5px 5px 5px;
 	border-radius: 5px 5px 5px 5px;
 }
+
+/************************************************************************/
+
+#parousiash
+{
+	height:auto;
+	margin-top:15px;
+	width:auto;
+	border:1px solid #2E91C0;
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+}
+
+#eikona
+{
+	display: inline-block;
+	height:auto;
+	width:auto;	
+}
+
+#keimeno_sug
+{
+	display: inline-block;
+	margin-left:10px;	
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:black;
+	height:auto;
+	width:auto;		
+}
+

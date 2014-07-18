@@ -19,7 +19,7 @@
     </div>
     <!--TELOS PANW MEROS-->
     
-    <!--ARXH KATW MEROS-->
+    <!--ARXH MESSAIO MEROS-->
     <div id="mid">
     
     	<?php include("include_with_php/gen_menu.php"); ?>
@@ -33,14 +33,14 @@
         </div>
         
         <div id="_search_">
-            <form action="euresh_suggrammatwn_aplh.php" method="GET">
+            <form action="php_anazhthshs/euresh_suggrammatwn_aplh.php" method="GET">
                 <input type="text" id="aplh_anazhthsh" name="aplh_anazhthsh" />
                 <br/>
 	            <input type="submit" id="sub_search" name="sub_search" value="Αναζήτηση" />
             </form>
             
             <div id="pros_sun">
-            <a href="#">Σύνθετη Αναζήτηση</a>
+            <a href="suntheth_anazhthsh.php">Σύνθετη Αναζήτηση</a>
             </div>
         </div>
         

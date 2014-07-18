@@ -19,7 +19,7 @@
     </div>
     <!--TELOS PANW MEROS-->
     
-    <!--ARXH KATW MEROS-->
+    <!--ARXH MESSAIO MEROS-->
     <div id="mid">
     
     	<?php include("include_with_php/gen_menu.php"); ?>
@@ -32,7 +32,7 @@
         Συμπληρώστε τα χαρακτηριστικά που γνωρίζετε στα κατάλληλα πεδία
         </div>        
         
-            <form action="euresh_suggrammatwn_suntheth.php" method="GET">
+            <form action="php_anazhthshs/euresh_suggrammatwn_suntheth.php" method="GET">
             <div id="main_form_1">
             	<div id="aristerh_anazhthsh">
                     <label>Τίτλος</label>
@@ -114,7 +114,7 @@
                 </form>
                 
                 <div id="pros_sun">
-                <a href="#">Σύνθετη Αναζήτηση</a>
+                <a href="aplh_anazhthsh.php">Απλή Αναζήτηση</a>
                 </div>
             </div>
       </div>
