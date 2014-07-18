@@ -79,6 +79,10 @@
         $results = mysqli_query($con, $sql);
         
         $data = array();
+		while ($row = mysqli_fetch_assoc($results))
+		{
+			$data[] = $row;
+		}
 		//Krataei olh th grammh gia ektupwsh sto telos
 		$keeper = array();
 		//Krataei ta biblia pou exoun hdh brethei

@@ -39,9 +39,9 @@
         $con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
         header('Content-Type: text/html; charset=UTF-8');
         
-        mysqli_query('SET NAMES utf8');
+        //mysqli_query('SET NAMES utf8');
         
-        mysqli_query('SET CHARACTER SET cp1250');
+       // mysqli_query('SET CHARACTER SET cp1250');
         
         //error_reporting(E_ALL);
         //ini_set('display_errors', 1);
@@ -53,14 +53,14 @@
         if($all_string == NULL)
 		{
 			echo"<div id=\"kefalides_selidwn\">
-			<a href=\"../aplh_anazhthsh.php\">Δεν έγινε εισαγωγή στην φόρμα.</a>
+			<a href=\"../aplh_anazhthsh.php\">Δεν έγινε εισαγωγή στην φόρμα. Επιστροφή στην Αναζήτηση</a>
 			</div>";
 			exit();	
 		}
         
         //echo "$all_string"."<br/>";
         
-        $tok = strtok($all_string, ",");
+        $tok = strtok($all_string, " ,;");
         
         //Diabazw apo thn bash
         
@@ -68,10 +68,13 @@
         $results = mysqli_query($con, $sql);
         
         $data = array();
+		$array = array();
         
         while ($row = mysqli_fetch_assoc($results))
         {
             $data[] = $row;
+			extract($row);
+			$array[$ISBN] = 0;
         }
         /*
         foreach($data as $row)
@@ -89,6 +92,7 @@
             $exist = 0;
             foreach($data as $row)
             {
+				$exist = 0;
                 extract($row);
                 
                 if(is_numeric($tok))
@@ -97,6 +101,7 @@
                     
                     if( ($arithmos_ekdoshs == (int)$tok) || ($arithmos_tomou == (int)$tok)  || ($etos_ekdoshs == (int)$tok) || ((int)$kwdikos_bibliou == (int)$tok))
                     {
+						//echo "1 $tok"."<br/>";
                         //echo "aaaaaaaa"."<br/>";
                         if($array[$ISBN] != 1)
                         {
@@ -116,54 +121,90 @@
 										Διαθέτης/Εκδότης: $diatheths_ekdoths<br/>										
 									</div>
 								</div>";
-                            $telos++;
+                            $telos++;							
                         }
                     }
                 }
                 
                 else
                 {
-                    //echo "$lekseis_kleidia"."<br/>";
-                    $key = strtok($lekseis_kleidia, ";");
-                    while($key !== false)
-                    {
-                        //echo "KEY" . "$key" . "<br/>";
-                        if(strcmp($key, $tok) == 0)
-                        {
-                            if($array[$ISBN] != 1)
-                            {
-                                $array[$ISBN] = 1;
-                                //echo "TITLOS" . "$titlos" . "<br/>";	
-								 echo "<div id=\"parousiash\">
-									<div id=\"eikona\">
-										<img src = \"$eikona\" />
-									</div>
-									<div id=\"keimeno_sug\">
-										$titlos<br/>
-										Κωδικός Βιβλίου στον Εύδοξο: $kwdikos_bibliou<br/>
-										Έκδοση: $arithmos_ekdoshs/$etos_ekdoshs<br/>
-										Συγγραφέας: $suggrafeas<br/>
-										ISBN: $ISBN<br/>
-										Τύπος: $tupos_suggrammatos<br/>
-										Διαθέτης/Εκδότης: $diatheths_ekdoths<br/>										
-									</div>
-								</div>";
-                                $exist = 1;
-                                $telos++;
-                            }
-                            break;
-                        }
-                    }
-                        
-                    if($exist == 0)
-                    {
-						$sug = strtok($suggrafeas, ",");
+					if( (strcmp($ISBN,$tok) == 0) || (strcmp($titlos,$tok) == 0) || (strcmp($titlos_tomou,$tok) == 0) || (strcmp($upotitlos,$tok) == 0) ||  (strcmp($tupos_suggrammatos,$tok) == 0) || (strcmp($diatheths_ekdoths,$tok) == 0) || (strcmp($ekdoseis,$tok) == 0) )
+					{
+						//echo "2 $tok"."<br/>";						
+						if($array[$ISBN] != 1)
+						{
+							$telos++;
+							$exist = 1;
+							$array[$ISBN] = 1;
+							 echo "<div id=\"parousiash\">
+								<div id=\"eikona\">
+									<img src = \"$eikona\" />
+								</div>
+								<div id=\"keimeno_sug\">
+									$titlos<br/>
+									Κωδικός Βιβλίου στον Εύδοξο: $kwdikos_bibliou<br/>
+									Έκδοση: $arithmos_ekdoshs/$etos_ekdoshs<br/>
+									Συγγραφέας: $suggrafeas<br/>
+									ISBN: $ISBN<br/>
+									Τύπος: $tupos_suggrammatos<br/>
+									Διαθέτης/Εκδότης: $diatheths_ekdoths<br/>										
+								</div>
+							</div>";							
+						}
+					}
+					
+					echo "AAAAAAAAAAAAAAAAAAAAAAA"."<br/>";
+					
+					if($exist !== 1)
+					{
+						$sug = strtok($suggrafeas, " ,;");
+						echo "BBBBBBBBBBBBBBBBBBB"."<br/>";
 						while($sug !== false)
 						{
-							if(strcmp($suggrafeas,$tok) == 0)
+							//echo "3 $sug"."<br/>";
+							if(strcmp($sug,$tok) == 0)
 							{
-								if($array[$ISBN] != 1)
+								if($array[$ISBN] !== 1)
 								{
+									$exist = 1;
+									$telos++;
+									$array[$ISBN] = 1;
+									
+									//echo "TITLOS" . "$titlos" . "<br/>";	
+									 echo "<div id=\"parousiash\">
+										<div id=\"eikona\">
+											<img src = \"$eikona\" />
+										</div>
+										<div id=\"keimeno_sug\">
+											$titlos<br/>
+											Κωδικός Βιβλίου στον Εύδοξο: $kwdikos_bibliou<br/>
+											Έκδοση: $arithmos_ekdoshs/$etos_ekdoshs<br/>
+											Συγγραφέας: $suggrafeas<br/>
+											ISBN: $ISBN<br/>
+											Τύπος: $tupos_suggrammatos<br/>
+											Διαθέτης/Εκδότης: $diatheths_ekdoths<br/>										
+										</div>
+									</div>";																		
+								}							
+							}
+							//if($exist == 1) break;
+							$sug = strtok(" ,;");
+						}						
+					}
+					
+					if(exist !== 1)
+					{
+						$key = strtok($lekseis_kleidia, " ;,");
+						echo "CCCCCCCCCCCCCCCCCC"."<br/>";
+						while($key !== false)
+						{	
+							//echo "4 $key"."<br/>";					
+							if(strcmp($key, $tok) == 0)
+							{																
+								if($array[$ISBN] !== 1)
+								{
+									$telos++;
+									$exist = 1;
 									$array[$ISBN] = 1;
 									//echo "TITLOS" . "$titlos" . "<br/>";	
 									 echo "<div id=\"parousiash\">
@@ -179,42 +220,16 @@
 											Τύπος: $tupos_suggrammatos<br/>
 											Διαθέτης/Εκδότης: $diatheths_ekdoths<br/>										
 										</div>
-									</div>";
-									$exist = 1;
-									$telos++;
-								}
-								break;
+									</div>";	
+								}                            
 							}
-						}
-                        //echo "$ISBN" . " " . "$titlos" . " " . "$suggrafeas" . "<br/>";
-                        if( (strcmp($ISBN,$tok) == 0) || (strcmp($titlos,$tok) == 0) || (strcmp($titlos_tomou,$tok) == 0) || (strcmp($upotitlos,$tok) == 0) ||  (strcmp($tupos_suggrammatos,$tok) == 0) || (strcmp($diatheths_ekdoths,$tok) == 0) || (strcmp($ekdoseis,$tok) == 0) )
-                        {
-                            if($array[$ISBN] != 1)
-                            {
-                                $telos++;
-                                $array[$ISBN] = 1;
-								 echo "<div id=\"parousiash\">
-									<div id=\"eikona\">
-										<img src = \"$eikona\" />
-									</div>
-									<div id=\"keimeno_sug\">
-										$titlos<br/>
-										Κωδικός Βιβλίου στον Εύδοξο: $kwdikos_bibliou<br/>
-										Έκδοση: $arithmos_ekdoshs/$etos_ekdoshs<br/>
-										Συγγραφέας: $suggrafeas<br/>
-										ISBN: $ISBN<br/>
-										Τύπος: $tupos_suggrammatos<br/>
-										Διαθέτης/Εκδότης: $diatheths_ekdoths<br/>										
-									</div>
-								</div>";
-                                //echo "TITLOS" . "$titlos" . "<br/>";	
-                            }
-                        }
-                    }
-                    
+							//if($exist == 1) break;
+							$key = strtok(" ;,");
+						}						                      
+                    }                   
                 }		
             }	
-            $tok = strtok(",");
+            $tok = strtok(" ,;");
         }
         
         if($telos == 0)
