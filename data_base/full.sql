@@ -1,16 +1,19 @@
-INSERT INTO `eam3`.`idrumata`
+SET NAMES utf8;
+
+
+INSERT INTO `eam3`.`Idrumata`
 (`onoma_idrumatos`)
 VALUES
 ('Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών');
 
-INSERT INTO `eam3`.`idrumata`
+INSERT INTO `eam3`.`Idrumata`
 (`onoma_idrumatos`)
 VALUES
 ('Πανεπιστήμιο Πειραιώς');
 
 /***************************************************************/
 
-INSERT INTO `eam3`.`grammateia`
+INSERT INTO `eam3`.`Grammateia`
 (`id`,
 `tmhma`,
 `Idrumata_onoma_idrumatos`)
@@ -19,7 +22,7 @@ VALUES
 'Πληροφορική και Τηλεπικοινωνίες',
 'Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών');
 
-INSERT INTO `eam3`.`grammateia`
+INSERT INTO `eam3`.`Grammateia`
 (`id`,
 `tmhma`,
 `Idrumata_onoma_idrumatos`)
@@ -28,7 +31,7 @@ VALUES
 'Φιλολογία',
 'Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών');
 
-INSERT INTO `eam3`.`grammateia`
+INSERT INTO `eam3`.`Grammateia`
 (`id`,
 `tmhma`,
 `Idrumata_onoma_idrumatos`)
@@ -37,7 +40,7 @@ VALUES
 'Οικονομική Επιστήμη',
 'Πανεπιστήμιο Πειραιώς');
 
-INSERT INTO `eam3`.`grammateia`
+INSERT INTO `eam3`.`Grammateia`
 (`id`,
 `tmhma`,
 `Idrumata_onoma_idrumatos`)
@@ -48,7 +51,7 @@ VALUES
 
 /***************************************************************/
 
-INSERT INTO `eam3`.`bibliopwleia`
+INSERT INTO `eam3`.`Bibliopwleia`
 (`idBibliopwleia`,
 `dieuthunsh`,
 `t_k`,
@@ -69,7 +72,7 @@ VALUES
 'Δίαυλος',
 'https://goo.gl/maps/EU1FJ');
 
-INSERT INTO `eam3`.`bibliopwleia`
+INSERT INTO `eam3`.`Bibliopwleia`
 (`idBibliopwleia`,
 `dieuthunsh`,
 `t_k`,
@@ -92,15 +95,15 @@ NULL,
 
 /***************************************************************/
 
-INSERT INTO `eam3`.`suggrammata`
+INSERT INTO `eam3`.`Suggrammata`
 (`ISBN`,
 `titlos`,
 `suggrafeas`,
 `titlos_tomou`,
 `upotitlos`,
-`arithmos_ekdosh`,
+`arithmos_ekdoshs`,
 `tupos_suggrammatos`,
-`arrithmos_tomou`,
+`arithmos_tomou`,
 `diatheths_ekdoths`,
 `kwdikos_bibliou`,
 `etos_ekdoshs`,
@@ -111,7 +114,7 @@ INSERT INTO `eam3`.`suggrammata`
 VALUES
 ('978-960-461-132-4',
 'Η ΓΛΩΣΣΑ ΠΡΟΓΡΑΜΜΑΤΙΣΜΟΥ C',
-'BRIAN W. KERNIGHAN, DENNIS M. RITCHIE',
+'KERNIGHAN,RITCHIE',
 NULL,
 NULL,
 2,
@@ -122,18 +125,18 @@ NULL,
 2008,
 'προγραμματισμός;c;γλώσσα',
 'ΚΛΕΙΔΑΡΙΘΜΟΣ',
-'/var/www/dokupload/biblia/prog_c.jpg',
+'../dokupload/biblia/prog_c.jpg',
 'Σύντομη περιγραφή εδώ...');
 
-INSERT INTO `eam3`.`suggrammata`
+INSERT INTO `eam3`.`Suggrammata`
 (`ISBN`,
 `titlos`,
 `suggrafeas`,
 `titlos_tomou`,
 `upotitlos`,
-`arithmos_ekdosh`,
+`arithmos_ekdoshs`,
 `tupos_suggrammatos`,
-`arrithmos_tomou`,
+`arithmos_tomou`,
 `diatheths_ekdoths`,
 `kwdikos_bibliou`,
 `etos_ekdoshs`,
@@ -144,7 +147,7 @@ INSERT INTO `eam3`.`suggrammata`
 VALUES
 ('978-960-8396-64-7',
 'ΤΕΧΝΗΤΗ ΝΟΗΜΟΣΥΝΗ',
-'ΒΛΑΧΑΒΑΣ Ι;ΚΕΦΑΛΑΣ Π.',
+'ΒΛΑΧΑΒΑΣ,ΚΕΦΑΛΑΣ',
 NULL,
 NULL,
 3,
@@ -155,18 +158,18 @@ NULL,
 2011,
 'τεχνητή;νοημοσύνη',
 'ΚΛΕΙΔΑΡΙΘΜΟΣ',
-'/var/www/dokupload/biblia/texn_nohm.jpg',
+'../dokupload/biblia/texn_nohm.jpg',
 'Σύντομη περιγραφή εδώ...');
 
-INSERT INTO `eam3`.`suggrammata`
+INSERT INTO `eam3`.`Suggrammata`
 (`ISBN`,
 `titlos`,
 `suggrafeas`,
 `titlos_tomou`,
 `upotitlos`,
-`arithmos_ekdosh`,
+`arithmos_ekdoshs`,
 `tupos_suggrammatos`,
-`arrithmos_tomou`,
+`arithmos_tomou`,
 `diatheths_ekdoths`,
 `kwdikos_bibliou`,
 `etos_ekdoshs`,
@@ -177,7 +180,7 @@ INSERT INTO `eam3`.`suggrammata`
 VALUES
 ('978-960-266-296-0',
 'Γραφικά και Οπτικοποίηση',
-'Θεοχάρης Θ.;Πλατής Ν.',
+'Θεοχάρης,Πλατής',
 NULL,
 NULL,
 1,
@@ -188,18 +191,18 @@ NULL,
 2010,
 'γραφικά;οπτικοποίηση',
 'Δίαυλος',
-'/var/www/dokupload/biblia/graph.jpg',
+'../dokupload/biblia/graph.jpg',
 'Σύντομη περιγραφή εδώ...');
 
-INSERT INTO `eam3`.`suggrammata`
+INSERT INTO `eam3`.`Suggrammata`
 (`ISBN`,
 `titlos`,
 `suggrafeas`,
 `titlos_tomou`,
 `upotitlos`,
-`arithmos_ekdosh`,
+`arithmos_ekdoshs`,
 `tupos_suggrammatos`,
-`arrithmos_tomou`,
+`arithmos_tomou`,
 `diatheths_ekdoths`,
 `kwdikos_bibliou`,
 `etos_ekdoshs`,
@@ -210,7 +213,7 @@ INSERT INTO `eam3`.`suggrammata`
 VALUES
 ('978-960-266-204-5',
 'Συστήματα Παράλληλης Επεξεργασίας',
-'Τσανάκας Παναγιώτης Δ.;Θεοχάρης Θ.',
+'Τσανάκας,Θεοχάρης',
 NULL,
 NULL,
 1,
@@ -221,12 +224,12 @@ NULL,
 1994,
 'συστήματα;παραλληλία;επεξεργασία;παράλληλα',
 'Δίαυλος',
-'/var/www/dokupload/biblia/paral.jpg',
+'../dokupload/biblia/paral.jpg',
 'Σύντομη περιγραφή εδώ...');
 
 /***************************************************************/
 
-INSERT INTO `eam3`.`mathhmata`
+INSERT INTO `eam3`.`Mathhmata`
 (`kwdikos_mathhmatos`,
 `onoma_mathhmatos`,
 `eksamhno`,
@@ -237,7 +240,7 @@ VALUES
 1,
 '1115');
 
-INSERT INTO `eam3`.`mathhmata`
+INSERT INTO `eam3`.`Mathhmata`
 (`kwdikos_mathhmatos`,
 `onoma_mathhmatos`,
 `eksamhno`,
@@ -250,28 +253,28 @@ VALUES
 
 /***************************************************************/
 
-INSERT INTO `eam3`.`arithmoi_mhtrwou`
+INSERT INTO `eam3`.`Arithmoi_mhtrwou`
 (`a_m`,
 `Grammateia_id`)
 VALUES
 ('1115201300210',
 '1115');
 
-INSERT INTO `eam3`.`arithmoi_mhtrwou`
+INSERT INTO `eam3`.`Arithmoi_mhtrwou`
 (`a_m`,
 `Grammateia_id`)
 VALUES
 ('1115201300056',
 '1115');
 
-INSERT INTO `eam3`.`arithmoi_mhtrwou`
+INSERT INTO `eam3`.`Arithmoi_mhtrwou`
 (`a_m`,
 `Grammateia_id`)
 VALUES
 ('1115201300104',
 '1115');
 
-INSERT INTO `eam3`.`arithmoi_mhtrwou`
+INSERT INTO `eam3`.`Arithmoi_mhtrwou`
 (`a_m`,
 `Grammateia_id`)
 VALUES
@@ -280,7 +283,7 @@ VALUES
 
 /***************************************************************/
 
-INSERT INTO `eam3`.`bibliopwleia_has_suggrammata`
+INSERT INTO `eam3`.`Bibliopwleia_has_Suggrammata`
 (`Bibliopwleia_idBibliopwleia`,
 `Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
@@ -291,7 +294,7 @@ VALUES
 '35474',
 5);
 
-INSERT INTO `eam3`.`bibliopwleia_has_suggrammata`
+INSERT INTO `eam3`.`Bibliopwleia_has_Suggrammata`
 (`Bibliopwleia_idBibliopwleia`,
 `Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
@@ -302,7 +305,7 @@ VALUES
 '45339',
 10);
 
-INSERT INTO `eam3`.`bibliopwleia_has_suggrammata`
+INSERT INTO `eam3`.`Bibliopwleia_has_Suggrammata`
 (`Bibliopwleia_idBibliopwleia`,
 `Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
@@ -313,7 +316,7 @@ VALUES
 '13956',
 2);
 
-INSERT INTO `eam3`.`bibliopwleia_has_suggrammata`
+INSERT INTO `eam3`.`Bibliopwleia_has_Suggrammata`
 (`Bibliopwleia_idBibliopwleia`,
 `Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
@@ -326,7 +329,7 @@ VALUES
 
 /***************************************************************/
 
-INSERT INTO `eam3`.`grammateia_has_suggrammata`
+INSERT INTO `eam3`.`Grammateia_has_Suggrammata`
 (`Grammateia_id`,
 `Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`)
@@ -335,7 +338,7 @@ VALUES
 '978-960-266-296-0',
 '35474');
 
-INSERT INTO `eam3`.`grammateia_has_suggrammata`
+INSERT INTO `eam3`.`Grammateia_has_Suggrammata`
 (`Grammateia_id`,
 `Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`)
@@ -344,7 +347,7 @@ VALUES
 '978-960-266-204-5',
 '45339');
 
-INSERT INTO `eam3`.`grammateia_has_suggrammata`
+INSERT INTO `eam3`.`Grammateia_has_Suggrammata`
 (`Grammateia_id`,
 `Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`)
@@ -353,7 +356,7 @@ VALUES
 '978-960-461-132-4',
 '13956');
 
-INSERT INTO `eam3`.`grammateia_has_suggrammata`
+INSERT INTO `eam3`.`Grammateia_has_Suggrammata`
 (`Grammateia_id`,
 `Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`)
@@ -364,7 +367,7 @@ VALUES
 
 /***************************************************************/
 
-INSERT INTO `eam3`.`suggrammata_has_mathhmata`
+INSERT INTO `eam3`.`Suggrammata_has_Mathhmata`
 (`Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
 `Mathhmata_kwdikos_mathhmatos`)
@@ -373,7 +376,7 @@ VALUES
 '35474',
 151);
 
-INSERT INTO `eam3`.`suggrammata_has_mathhmata`
+INSERT INTO `eam3`.`Suggrammata_has_Mathhmata`
 (`Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
 `Mathhmata_kwdikos_mathhmatos`)
@@ -382,7 +385,7 @@ VALUES
 '35474',
 234);
 
-INSERT INTO `eam3`.`suggrammata_has_mathhmata`
+INSERT INTO `eam3`.`Suggrammata_has_Mathhmata`
 (`Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
 `Mathhmata_kwdikos_mathhmatos`)
@@ -391,7 +394,7 @@ VALUES
 '45339',
 151);
 
-INSERT INTO `eam3`.`suggrammata_has_mathhmata`
+INSERT INTO `eam3`.`Suggrammata_has_Mathhmata`
 (`Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
 `Mathhmata_kwdikos_mathhmatos`)
@@ -401,7 +404,7 @@ VALUES
 151);
 
 
-INSERT INTO `eam3`.`suggrammata_has_mathhmata`
+INSERT INTO `eam3`.`Suggrammata_has_Mathhmata`
 (`Suggrammata_ISBN`,
 `Suggrammata_kwdikos_bibliou`,
 `Mathhmata_kwdikos_mathhmatos`)

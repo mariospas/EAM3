@@ -1,3 +1,5 @@
+CREATE DATABASE eam3 DEFAULT CHARACTER SET utf8;
+
 CREATE TABLE IF NOT EXISTS `eam3`.`Idrumata` (
   `onoma_idrumatos` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
   PRIMARY KEY (`onoma_idrumatos`))
@@ -43,9 +45,9 @@ CREATE TABLE IF NOT EXISTS `eam3`.`Suggrammata` (
   `suggrafeas` VARCHAR(255) CHARACTER SET 'utf8' NOT NULL,
   `titlos_tomou` VARCHAR(45) CHARACTER SET 'utf8' NULL,
   `upotitlos` VARCHAR(45) CHARACTER SET 'utf8' NULL,
-  `arithmos_ekdosh` INT NOT NULL,
+  `arithmos_ekdoshs` INT NOT NULL,
   `tupos_suggrammatos` VARCHAR(45) CHARACTER SET 'utf8' NOT NULL,
-  `arrithmos_tomou` INT NULL,
+  `arithmos_tomou` INT NULL,
   `diatheths_ekdoths` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
   `kwdikos_bibliou` VARCHAR(45) NOT NULL,
   `etos_ekdoshs` INT NOT NULL,
