@@ -21,12 +21,18 @@
 
 
 <?php
-
-	// Connects to your Database
-	$con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
 	
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1);
+
+	// Connects to your Database
+	$con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
+	if(!$con)
+	{
+		die("Connection Failed".mysqli_error());		
+	}
+	
+	
 
 	//This is the directory where images will be saved
 	$target = "dokupload/";
@@ -55,7 +61,7 @@
 	echo "<br>";
 	
 	
-	if ( !  ($ext == "jpg")  or  ($ext == "jpeg")  or  ($ext == "png")   )
+	if (  ($ext != "jpg")  &&  ($ext != "jpeg")  &&  ($ext != "png")   )
 	{
 		echo "Δεχόμαστε μόνο αρχεία με κατάληξη .jpg , .jpeg και .png .Παρακαλούμε προσπαθήστε ξανά!";
 		return;
@@ -64,7 +70,7 @@
 	
 	echo "<br>";
 	
-	echo "Pic = "."$pic";
+	echo "Pic = "."$target";
 	echo "<br>";
 	echo $name;
 	echo "<br>";
@@ -96,27 +102,71 @@
 	//$bands=$_POST['otherBands'];
 		
 
-	if(!$con)
-	{
-		die("Connection Failed".mysqli_error());		
-	}
+	
 	//mysql_select_db("dbName") or die(mysql_error()) ;
 	
-	//mysql_select_db("eam3", $con);
+	if( mysqli_select_db($con, "eam3") == true )
+	{
+		echo "<br>"."True selection"."<br>";
+	}
+	else echo "<br>"."False selection"."<br>";
 	
 	//Writes the information to the database
 	
-	/*
-	echo "$name" . " " . "$bandMember" . "<br/>";
 	
-	$sql = 	"INSERT INTO Grammateia(id, idruma, tmhma) VALUES ('4', '$name', '$bandMember');";
+	//echo "$name" . " " . "$bandMember" . "<br/>";
+	
+	/*$sql = 	"INSERT INTO Grammateia(id, idruma, tmhma) VALUES ('4', '$name', 'Πανεπιστήμιο Πειραιώς');";
 				
-	 $some = mysqli_query($con,$sql);
-	 if (!$some) 
+	 //$some = mysqli_query($con,$sql);
+	 if ($some = mysqli_query($con, $sql)) 
+	 {
+    		printf("Affected returned %d rows.\n", mysqli_num_rows($result));
+			//mysqli_free_result($result);
+	 }
+	 
+	 else  
 	 {
 			echo "Yparxei" . "<br/>";
 	 }
-
+	 */
+	 
+	 
+		$result = mysql_query("SELECT * FROM Grammateia WHERE", $con);
+		$row = mysql_fetch_row($result);
+		if (!$row)
+		{
+			echo 'Error - user does not exist';
+			exit();
+		}
+		$id = $row['id']; 
+		echo "$id";
+	 
+	 
+	 
+	/* $sql = 	"INSERT INTO Foithtes(onoma,epitheto,onoma_xrhsth,e_mail,kwdikos,thlefwno,fwtografia,idruma,tmhma,eksamhno,Arithmoi_mhtrwou_a_m)
+VALUES('$name','$epitheto','$username','$email','$password','$thl','$target',<'$idrima','$tmhma','$eksamhno','$aritmos_mhtroo');
+;";
+				
+	 if ($result = mysqli_query($con, $sql)) 
+	 {
+    		printf("Affected returned %d rows.\n", mysqli_num_rows($result));
+			//mysqli_free_result($result);
+	 }
+	 //$some = mysqli_query($con,$sql);
+	 if (!$result) 
+	 {
+			echo "Το Όνομα Χρήστη ή ο Αριθμός Μητρώου χρησιμοποιείται από άλλον χρήστη !" . "<br/>";
+			return;
+	 }
+	 mysqli_free_result($result);
+	 
+	 echo "<br>";
+	 echo "Η Εγγραφή ολοκληρώθηκε με επιτυχία !";
+	 echo "<br>";
+	 */
+	 
+	/*
     $request = mysqli_query($con,"SELECT * FROM eam3.Grammateia");
 
     while ($row = mysqli_fetch_array($request))
