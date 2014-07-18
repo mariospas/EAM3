@@ -78,39 +78,41 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
-CREATE TABLE IF NOT EXISTS `eam3`.`Arithmoi_mhtrwou` (
-  `a_m` VARCHAR(17) NOT NULL,
-  `Grammateia_id` VARCHAR(10) NOT NULL,
-  PRIMARY KEY (`a_m`),
-  INDEX `fk_Arithmoi_mhtrwou_Grammateia1_idx` (`Grammateia_id` ASC),
+CREATE  TABLE IF NOT EXISTS `eam3`.`Arithmoi_mhtrwou` (
+  `a_m` VARCHAR(17) NOT NULL ,
+  `Grammateia_id` VARCHAR(10) NOT NULL ,
+  PRIMARY KEY (`a_m`) ,
+  INDEX `fk_Arithmoi_mhtrwou_Grammateia1_idx` (`Grammateia_id` ASC) ,
+  UNIQUE INDEX `a_m_UNIQUE` (`a_m` ASC) ,
   CONSTRAINT `fk_Arithmoi_mhtrwou_Grammateia1`
-    FOREIGN KEY (`Grammateia_id`)
-    REFERENCES `eam3`.`Grammateia` (`id`)
+    FOREIGN KEY (`Grammateia_id` )
+    REFERENCES `eam3`.`Grammateia` (`id` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
-CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes` (
-  `onoma` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
-  `epitheto` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
-  `onoma_xrhsth` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
-  `e_mail` VARCHAR(255) NOT NULL,
-  `kwdikos` VARCHAR(45) NOT NULL,
-  `thlefwno` VARCHAR(11) NULL,
-  `fwtografia` VARCHAR(255) CHARACTER SET 'utf8' NULL,
-  `idruma` VARCHAR(70) CHARACTER SET 'utf8' NOT NULL,
-  `tmhma` VARCHAR(45) CHARACTER SET 'utf8' NOT NULL,
-  `eksamhno` INT NOT NULL,
-  `Arithmoi_mhtrwou_a_m` VARCHAR(17) NOT NULL,
-  PRIMARY KEY (`onoma_xrhsth`, `Arithmoi_mhtrwou_a_m`),
-  UNIQUE INDEX `onoma_xrhsth_UNIQUE` (`onoma_xrhsth` ASC),
-  UNIQUE INDEX `e_mail_UNIQUE` (`e_mail` ASC),
-  INDEX `fk_Foithtes_Arithmoi_mhtrwou1_idx` (`Arithmoi_mhtrwou_a_m` ASC),
+CREATE  TABLE IF NOT EXISTS `eam3`.`Foithtes` (
+  `onoma` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL ,
+  `epitheto` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL ,
+  `onoma_xrhsth` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL ,
+  `e_mail` VARCHAR(255) NOT NULL ,
+  `kwdikos` VARCHAR(45) NOT NULL ,
+  `thlefwno` VARCHAR(11) NULL ,
+  `fwtografia` VARCHAR(255) CHARACTER SET 'utf8' NULL ,
+  `idruma` VARCHAR(70) CHARACTER SET 'utf8' NOT NULL ,
+  `tmhma` VARCHAR(45) CHARACTER SET 'utf8' NOT NULL ,
+  `eksamhno` INT NOT NULL ,
+  `Arithmoi_mhtrwou_a_m` VARCHAR(17) NOT NULL ,
+  PRIMARY KEY (`onoma_xrhsth`, `Arithmoi_mhtrwou_a_m`) ,
+  UNIQUE INDEX `onoma_xrhsth_UNIQUE` (`onoma_xrhsth` ASC) ,
+  UNIQUE INDEX `e_mail_UNIQUE` (`e_mail` ASC) ,
+  INDEX `fk_Foithtes_Arithmoi_mhtrwou1_idx` (`Arithmoi_mhtrwou_a_m` ASC) ,
+  UNIQUE INDEX `Arithmoi_mhtrwou_a_m_UNIQUE` (`Arithmoi_mhtrwou_a_m` ASC) ,
   CONSTRAINT `fk_Foithtes_Arithmoi_mhtrwou1`
-    FOREIGN KEY (`Arithmoi_mhtrwou_a_m`)
-    REFERENCES `eam3`.`Arithmoi_mhtrwou` (`a_m`)
+    FOREIGN KEY (`Arithmoi_mhtrwou_a_m` )
+    REFERENCES `eam3`.`Arithmoi_mhtrwou` (`a_m` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -181,46 +183,50 @@ ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
-CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes_has_Mathhmata` (
-  `Foithtes_onoma_xrhsth` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
-  `Foithtes_Arithmoi_mhtrwou_a_m` VARCHAR(17) NOT NULL,
-  `Mathhmata_kwdikos_mathhmatos` INT NOT NULL,
-  PRIMARY KEY (`Foithtes_onoma_xrhsth`, `Foithtes_Arithmoi_mhtrwou_a_m`, `Mathhmata_kwdikos_mathhmatos`),
-  INDEX `fk_Foithtes_has_Mathhmata_Mathhmata1_idx` (`Mathhmata_kwdikos_mathhmatos` ASC),
-  INDEX `fk_Foithtes_has_Mathhmata_Foithtes1_idx` (`Foithtes_onoma_xrhsth` ASC, `Foithtes_Arithmoi_mhtrwou_a_m` ASC),
+CREATE  TABLE IF NOT EXISTS `eam3`.`Foithtes_has_Mathhmata` (
+  `Foithtes_onoma_xrhsth` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL ,
+  `Foithtes_Arithmoi_mhtrwou_a_m` VARCHAR(17) NOT NULL ,
+  `Mathhmata_kwdikos_mathhmatos` INT NOT NULL ,
+  PRIMARY KEY (`Foithtes_onoma_xrhsth`, `Foithtes_Arithmoi_mhtrwou_a_m`, `Mathhmata_kwdikos_mathhmatos`) ,
+  INDEX `fk_Foithtes_has_Mathhmata_Mathhmata1_idx` (`Mathhmata_kwdikos_mathhmatos` ASC) ,
+  INDEX `fk_Foithtes_has_Mathhmata_Foithtes1_idx` (`Foithtes_onoma_xrhsth` ASC, `Foithtes_Arithmoi_mhtrwou_a_m` ASC) ,
+  UNIQUE INDEX `Foithtes_onoma_xrhsth_UNIQUE` (`Foithtes_onoma_xrhsth` ASC) ,
+  UNIQUE INDEX `Foithtes_Arithmoi_mhtrwou_a_m_UNIQUE` (`Foithtes_Arithmoi_mhtrwou_a_m` ASC) ,
   CONSTRAINT `fk_Foithtes_has_Mathhmata_Foithtes1`
-    FOREIGN KEY (`Foithtes_onoma_xrhsth` , `Foithtes_Arithmoi_mhtrwou_a_m`)
-    REFERENCES `eam3`.`Foithtes` (`onoma_xrhsth` , `Arithmoi_mhtrwou_a_m`)
+    FOREIGN KEY (`Foithtes_onoma_xrhsth` , `Foithtes_Arithmoi_mhtrwou_a_m` )
+    REFERENCES `eam3`.`Foithtes` (`onoma_xrhsth` , `Arithmoi_mhtrwou_a_m` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Foithtes_has_Mathhmata_Mathhmata1`
-    FOREIGN KEY (`Mathhmata_kwdikos_mathhmatos`)
-    REFERENCES `eam3`.`Mathhmata` (`kwdikos_mathhmatos`)
+    FOREIGN KEY (`Mathhmata_kwdikos_mathhmatos` )
+    REFERENCES `eam3`.`Mathhmata` (`kwdikos_mathhmatos` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
 
-CREATE TABLE IF NOT EXISTS `eam3`.`Foithtes_has_Suggrammata` (
-  `Suggrammata_ISBN` VARCHAR(50) NOT NULL,
-  `Suggrammata_kwdikos_bibliou` VARCHAR(45) NOT NULL,
-  `Foithtes_onoma_xrhsth` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL,
-  `Foithtes_Arithmoi_mhtrwou_a_m` VARCHAR(17) NOT NULL,
-  `eidos` INT NOT NULL,
-  `hmeromhnia_paralabhs` DATE NULL,
-  `hmeromhnia_paradoshs` DATE NULL,
-  PRIMARY KEY (`Suggrammata_ISBN`, `Suggrammata_kwdikos_bibliou`, `Foithtes_onoma_xrhsth`, `Foithtes_Arithmoi_mhtrwou_a_m`),
-  INDEX `fk_Suggrammata_has_Foithtes_Foithtes1_idx` (`Foithtes_onoma_xrhsth` ASC, `Foithtes_Arithmoi_mhtrwou_a_m` ASC),
-  INDEX `fk_Suggrammata_has_Foithtes_Suggrammata1_idx` (`Suggrammata_ISBN` ASC, `Suggrammata_kwdikos_bibliou` ASC),
+CREATE  TABLE IF NOT EXISTS `eam3`.`Foithtes_has_Suggrammata` (
+  `Suggrammata_ISBN` VARCHAR(50) NOT NULL ,
+  `Suggrammata_kwdikos_bibliou` VARCHAR(45) NOT NULL ,
+  `Foithtes_onoma_xrhsth` VARCHAR(100) CHARACTER SET 'utf8' NOT NULL ,
+  `Foithtes_Arithmoi_mhtrwou_a_m` VARCHAR(17) NOT NULL ,
+  `eidos` INT NOT NULL ,
+  `hmeromhnia_paralabhs` DATE NULL ,
+  `hmeromhnia_paradoshs` DATE NULL ,
+  PRIMARY KEY (`Suggrammata_ISBN`, `Suggrammata_kwdikos_bibliou`, `Foithtes_onoma_xrhsth`, `Foithtes_Arithmoi_mhtrwou_a_m`) ,
+  INDEX `fk_Suggrammata_has_Foithtes_Foithtes1_idx` (`Foithtes_onoma_xrhsth` ASC, `Foithtes_Arithmoi_mhtrwou_a_m` ASC) ,
+  INDEX `fk_Suggrammata_has_Foithtes_Suggrammata1_idx` (`Suggrammata_ISBN` ASC, `Suggrammata_kwdikos_bibliou` ASC) ,
+  UNIQUE INDEX `Foithtes_Arithmoi_mhtrwou_a_m_UNIQUE` (`Foithtes_Arithmoi_mhtrwou_a_m` ASC) ,
+  UNIQUE INDEX `Foithtes_onoma_xrhsth_UNIQUE` (`Foithtes_onoma_xrhsth` ASC) ,
   CONSTRAINT `fk_Suggrammata_has_Foithtes_Suggrammata1`
-    FOREIGN KEY (`Suggrammata_ISBN` , `Suggrammata_kwdikos_bibliou`)
-    REFERENCES `eam3`.`Suggrammata` (`ISBN` , `kwdikos_bibliou`)
+    FOREIGN KEY (`Suggrammata_ISBN` , `Suggrammata_kwdikos_bibliou` )
+    REFERENCES `eam3`.`Suggrammata` (`ISBN` , `kwdikos_bibliou` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
   CONSTRAINT `fk_Suggrammata_has_Foithtes_Foithtes1`
-    FOREIGN KEY (`Foithtes_onoma_xrhsth` , `Foithtes_Arithmoi_mhtrwou_a_m`)
-    REFERENCES `eam3`.`Foithtes` (`onoma_xrhsth` , `Arithmoi_mhtrwou_a_m`)
+    FOREIGN KEY (`Foithtes_onoma_xrhsth` , `Foithtes_Arithmoi_mhtrwou_a_m` )
+    REFERENCES `eam3`.`Foithtes` (`onoma_xrhsth` , `Arithmoi_mhtrwou_a_m` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
