@@ -38,8 +38,15 @@
 	if(!empty($onoma))
 	{
 		echo "$onoma"."<br/>";
-		$sql = "UPDATE Foithtes SET `onoma`='$onoma' WHERE `onoma_xrhsth`='jimmakos';";
+		$sql = "UPDATE Foithtes SET onoma=$onoma WHERE onoma_xrhsth=\"jimmakos\" AND Arithmoi_mhtrwou_a_m=\"1115201300001\";";
 		$do = mysqli_query($sql);
+		
+		$doo=mysqli_query("SELECT * FROM Foithtes;");
+		while($row = mysqli_fetch_assoc($doo))
+		{
+			extract($row);
+			echo"$onoma"."<br/>";	
+		}
 		
 	}
 	
