@@ -89,7 +89,7 @@
         <form action="php_anazhthshs/elegxos_kwd.php" method="POST">
         
         	<div id="blue_l"><label>Κωδικός Πρόσβασης</label></div><br/>
-            <input style="margin-left:15px;" type="password" id="kwdikos" name="kwdikos" required />
+            <input style="margin-left:15px;" type="password" id="kwdikos_" name="kwdikos_" required />
             
             <div id="upokefalida" style="text-align:left; margin-left:15px;">
                 Συμπληρώστε μόνο τα πεδία που θέλετε να αλλάξετε
@@ -143,17 +143,13 @@
                 </div>
             </div>
             
-            <input type="submit" id="accept" name="accept" value="Αποδοχή αλλαγών" />
-            
-        </form>
-        
-        <div id="upokefalida" style="text-align:left; margin-left:15px; font-size:12px;">
+            <div id="upokefalida" style="text-align:left; margin-left:15px; font-size:12px; display:inline-block;">
             (*)Αν συμπληρωθεί το πεδίο "Νέος Κωδικός Πρόσβασης" είναι υποχρεωτική <br/>και η συμπλήρωση του πεδίου "Επιβεβαίωση Νέου Κωδικού Πρόσβασης. 
         </div>
-        
-        <?php
-		
-		?>    
+            
+            <input style="display:inline-block;" type="submit" id="accept" name="accept" value="Αποδοχή αλλαγών" />
+            
+        </form>    
          	
 	</div>
     <!--TELOS MESSAIO MEROS-->
