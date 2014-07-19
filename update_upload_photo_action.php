@@ -76,7 +76,6 @@
             
             
             $ext = substr($pic, strrpos($pic, '.') + 1);
-            echo "{$ext}";
             echo "<br>";
             
             
