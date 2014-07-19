@@ -61,7 +61,7 @@
 	echo "<br>";
 	
 	
-	if (  ($ext != "jpg")  &&  ($ext != "jpeg")  &&  ($ext != "png")   )
+	if (  ($ext != "jpg")  &&  ($ext != "jpeg")  &&  ($ext != "png") && ($ext != NULL)  )
 	{
 		echo "Δεχόμαστε μόνο αρχεία με κατάληξη .jpg , .jpeg και .png .Παρακαλούμε προσπαθήστε ξανά!";
 		return;
@@ -103,13 +103,20 @@
 		
 
 	
-	//mysql_select_db("dbName") or die(mysql_error()) ;
+	//$sql = "SELECT * FROM Grammateia";
+	$sql = 	"INSERT INTO Foithtes(onoma,epitheto,onoma_xrhsth,e_mail,kwdikos,thlefwno,fwtografia,idruma,tmhma,eksamhno,Arithmoi_mhtrwou_a_m)
+VALUES('$name','$epitheto','$username','$email','$password','$thl','$target','$idrima','$tmhma','$eksamhno','$aritmos_mhtroo')";
+    $results = mysqli_query($con, $sql);
+ 	$data = array();
+	$array = array();
 	
-	if( mysqli_select_db($con, "eam3") == true )
+	while ($row = mysqli_fetch_assoc($results))
 	{
-		echo "<br>"."True selection"."<br>";
+		$data = $row['id'];
+		echo "$data";
+		echo "<br>";
+		extract($row);
 	}
-	else echo "<br>"."False selection"."<br>";
 	
 	//Writes the information to the database
 	
@@ -130,17 +137,7 @@
 			echo "Yparxei" . "<br/>";
 	 }
 	 */
-	 
-	 
-		$result = mysql_query("SELECT * FROM Grammateia WHERE", $con);
-		$row = mysql_fetch_row($result);
-		if (!$row)
-		{
-			echo 'Error - user does not exist';
-			exit();
-		}
-		$id = $row['id']; 
-		echo "$id";
+	
 	 
 	 
 	 
