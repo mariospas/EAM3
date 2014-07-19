@@ -39,7 +39,7 @@
         </div>        
         
         <div id="id_sug">
-        <button id="button_small_2" onclick="myFunction('eth')">ΕΘΙΝΚΟ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ</button>
+        <button id="button_small_2" onclick="myFunction('eth')">Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών</button>
         </div>        
         
         <div id="eth" style="display:none;">
@@ -50,7 +50,7 @@
             </div>
             
             <div id="id_sug">
-            <button id="button_small_2" onclick="myFunction('pl')"><a href="#pl">ΠΛΗΡΟΦΟΡΙΚΗ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΕΣ</a></button>
+            <button id="button_small_2" onclick="myFunction('pl')"><a href="#pl">Πληροφορική και Τηλεπικοινωνίες</a></button>
             </div>
             
             <div id="pl"  style="display:none;">
@@ -98,7 +98,7 @@
        
        
            <div id="id_sug">
-              <button id="button_small_2" onclick="myFunction('fi')"><a href="#fi">ΦΙΛΟΛΟΓΙΑ</a></button>
+              <button id="button_small_2" onclick="myFunction('fi')"><a href="#fi">Φιλολογία</a></button>
            </div>
            
            <div id="fi"  style="display:none;">
@@ -115,7 +115,7 @@
        <div id="diaxwr"></div>
        
        <div id="id_sug">
-          <button id="button_small_2" onclick="myFunction('pe')">ΠΑΝΕΠΙΣΤΗΜΙΟ ΠΕΙΡΑΙΩΣ</button>
+          <button id="button_small_2" onclick="myFunction('pe')">Πανεπιστήμιο Πειραιώς</button>
        </div>
        
         <div id="pe" style="display:none;">
@@ -126,7 +126,7 @@
             </div>
             
             <div id="id_sug">
-            <button id="button_small_2" onclick="myFunction('oik')"><a href="#oik">ΟΙΚΟΝΟΜΙΚΗ ΕΠΙΣΤΗΜΗ</a></button>
+            <button id="button_small_2" onclick="myFunction('oik')"><a href="#oik">Οικονομική Επιστήμη</a></button>
             </div>
             
             <div id="oik"  style="display:none;">
@@ -139,7 +139,7 @@
             </div>
             
             <div id="id_sug">
-            <button id="button_small_2" onclick="myFunction('na')"><a href="#na">ΝΑΥΤΙΛΙΑΚΕΣ ΣΠΟΥΔΕΣ</a></button>
+            <button id="button_small_2" onclick="myFunction('na')"><a href="#na">Ναυτιλιακές Σπουδές</a></button>
             </div>
             
             <div id="na"  style="display:none;">
