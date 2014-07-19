@@ -50,7 +50,7 @@
             </div>
             
             <div id="id_sug">
-            <button id="button_small_2" onclick="myFunction('pl')"><a href="#pl">Πληροφορική και Τηλεπικοινωνίες</a></button>
+            <a href="#pl"><button id="button_small_2" onclick="myFunction('pl')">Πληροφορική και Τηλεπικοινωνίες</button></a>
             </div>
             
             <div id="pl"  style="display:none;">
@@ -98,7 +98,7 @@
        
        
            <div id="id_sug">
-              <button id="button_small_2" onclick="myFunction('fi')"><a href="#fi">Φιλολογία</a></button>
+              <a href="#fi"><button id="button_small_2" onclick="myFunction('fi')">Φιλολογία</button></a>
            </div>
            
            <div id="fi"  style="display:none;">
@@ -126,7 +126,7 @@
             </div>
             
             <div id="id_sug">
-            <button id="button_small_2" onclick="myFunction('oik')"><a href="#oik">Οικονομική Επιστήμη</a></button>
+            <a href="#oik"><button id="button_small_2" onclick="myFunction('oik')">Οικονομική Επιστήμη</button></a>
             </div>
             
             <div id="oik"  style="display:none;">
@@ -139,7 +139,7 @@
             </div>
             
             <div id="id_sug">
-            <button id="button_small_2" onclick="myFunction('na')"><a href="#na">Ναυτιλιακές Σπουδές</a></button>
+            <a href="#na"><button id="button_small_2" onclick="myFunction('na')">Ναυτιλιακές Σπουδές</button></a>
             </div>
             
             <div id="na"  style="display:none;">
