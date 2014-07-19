@@ -34,112 +34,268 @@
         
         <?php
 		
-		// Connects to your Database
-        $con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
-        header('Content-Type: text/html; charset=UTF-8');
-        
-        mysqli_query('SET NAMES utf8');
-        
-        mysqli_query('SET CHARACTER SET cp1250');
-        
-        //error_reporting(E_ALL);
-        //ini_set('display_errors', 1);
-        
-        //Diabazw ta koutia
+		$con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
 		
-		if(
-		($ISBN_ = $_GET['isbn'] == NULL) && (
-		$kwdikos_bibliou_ = $_GET['kwdikos_bibliou'] == NULL) && (
-		$titlos_ = $_GET['titlos'] == NULL) && (
-		$suggrafeas_ = $_GET['suggrafeas'] == NULL) && (
-		$titlos_tomou_ = $_GET['titlos_tomou'] == NULL) && (
-		$upotitlos_ = $_GET['upotitlos'] == NULL) && (
-		$arithmos_ekdoshs_ = $_GET['arithmos_ekdoshs'] == NULL) && (
-		$tupos_ = $_GET['tupos'] == NULL) && (
-		$arithmos_tomou_ = $_GET['arithmos_tomou'] == NULL) && (
-		$diatheths_ekdoths_ = $_GET['diatheths'] == NULL) && (
-		$etos_ekdoshs_ = $_GET['etos_ekdoshs'] == NULL) && (
-		$lekseis_kleidai_ = $_GET['lekseis_kleidia'] == NULL) && (
-		$ekdoseis_ = $_GET['ekdoseis'] == NULL))
-		{
-			echo"<div id=\"kefalides_selidwn\">
-			<a href=\"../suntheth_anazhthsh.php\">Δεν έγινε εισαγωγή στην φόρμα.</a>
-			</div>";
-			exit();
-		}
-		
-		echo "$kwdikos_bibliou_";
-		echo "$ISBN_";
-		//Elegxei an mpei primary key
-		$pk = 0;
-		//Elegxei an brethhkan apotelesmata kai posa
+		//Elegxei an brethhkan apotelesmata
 		$telos = 0;
 		
+		$data = array();
+		$array = array();
+		$keeper = array();
+		
 		$sql = "SELECT * FROM Suggrammata";
-        $results = mysqli_query($con, $sql);
-        
-        $data = array();
-		while ($row = mysqli_fetch_assoc($results))
+		$results = mysqli_query($con, $sql);
+		
+		while($row = mysqli_fetch_assoc($results))
 		{
 			$data[] = $row;
+			extract($row);
+			$array[$ISBN] = 0;
 		}
-		//Krataei olh th grammh gia ektupwsh sto telos
-		$keeper = array();
-		//Krataei ta biblia pou exoun hdh brethei
-		$array = array();
-        
-        while ($row = mysqli_fetch_assoc($results))
-        {
-            $data[] = $row;
-        }
+				
+		$Titlos = $_GET['titlos'];
+		$Suggrafeas = $_GET['suggrafeas'];
+		$Titlos_tomou = $_GET['titlos_tomou'];
+		$Isbn = $_GET['isbn'];
+		$Ypotitlos = $_GET['upotitlos'];
+		$Arithmos_ekdoshs = $_GET['arithmos_ekdoshs'];
+		$Tupos = $_GET['tupos'];
+		$Arithmos_tomou = $_GET['arithmos_tomou'];
+		$Diatheths = $_GET['diatheths'];
+		$Kwdikos_bibliou = $_GET['kwdikos_bibliou'];
+		$Etos_ekdoshs = $_GET['etos_ekdoshs'];
+		$Lekseis_kleidia = $_GET['lekseis_kleidia'];
+		$Ekdoseis = $_GET['ekdoseis'];
 		
-		if($ISBN_ !== NULL)
-		{
-			$pk = 1;
-			
-			foreach($data as $row)
-            {
-                extract($row);
-				if(strcmp($ISBN_, $ISBN) == 0)
-				{
-					$keeper[] = $row;
-					$array[$ISBN] = 1;
-					$telos++;
-					break;
-				}
-			}
-		}
-		
-		if($kwdikos_bibliou_ !== NULL)
+		if(!empty($Titlos))
 		{
 			foreach($data as $row)
 			{
 				extract($row);
-				if(strcmp($kwdikos_bibliou_, $kwdikos_bibliou) == 0)
+				if(strcmp($Titlos, $titlos) == 0)
 				{
-					//An exei mpei to ISBN tsekarw an einai to idio suggramma
-					if($pk == 1)
+					if($array[$ISBN] == 0)
 					{
-						if(strcmp($ISBN, $ISBN_) != 0)
-						{
-							echo"<div id=\"kefalides_selidwn\">
-								<a href=\"../suntheth_anazhthsh.php\">Διαφορετικά πρωτεύοντα στοιχεία.</a>
-								</div>";
-								exit();
-						}
-					}
-					
-					//An den exei mpei ISBN sunexizw
-					else
-					{
-						$pk=1;
 						$keeper[] = $row;
 						$array[$ISBN] = 1;
-						$telos = 1;
-						break;
+						$telos++;	
 					}
 				}
 			}
+		}
+		
+		if(!empty($Suggrafeas))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				$tok = strtok($suggrafeas, " ,;");
+				while($tok !== false)
+				{
+					if(strcmp($Suggrafeas, $tok) == 0)
+					{
+						if($array[$ISBN] == 0)
+						{
+							$keeper[] = $row;
+							$array[$ISBN] = 1;
+							$telos++;	
+						}
+					}
+					$tok = strtok(" ,;");
+				}
+			}
+		}
+		
+		if(!empty($Titlos_tomou))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if(strcmp($Titlos_tomou, $titlos_tomou) == 0)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}
+		}
+		
+		if(!empty($Isbn))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if(strcmp($Isbn, $ISBN) == 0)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}	
+		}
+		
+		if(!empty($Ypotitlos))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if(strcmp($Ypotitlos, $upotitlos) == 0)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}
+		}
+		
+		if(!empty($Arithmos_ekdoshs))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if($Arithmos_ekdoshs == $arithmos_ekdoshs)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}
+		}
+		
+		if(!empty($Tupos))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if(strcmp($Tupos, $tupos) == 0)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}	
+		}
+		
+		if(!empty($Arithmos_tomou))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if($Arithmos_tomou == $arithmos_tomou)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}
+		}
+		
+		if(!empty($Diatheths))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if(strcmp($Diatheths, $diatheths) == 0)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}	
+		}
+		
+		if(!empty($Kwdikos_bibliou))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if(strcmp($Kwdikos_bibliou, $kwdikos_bibliou) == 0)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}	
+		}		
+		
+		if(!empty($Etos_ekdoshs))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if($Etos_ekdoshs == $etos_ekdoshs)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}
+		}
+		
+		if(!empty($Lekseis_kleidia))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				$tok = strtok($lekseis_kleidia, " ,;");
+				while($tok !== false)
+				{
+					if(strcmp($Lekseis_kleidia, $tok) == 0)
+					{
+						if($array[$ISBN] == 0)
+						{
+							$keeper[] = $row;
+							$array[$ISBN] = 1;
+							$telos++;	
+						}
+					}
+					$tok = strtok(" ,;");
+				}
+			}
+		}
+		
+		if(!empty($Ekdoseis))
+		{
+			foreach($data as $row)
+			{
+				extract($row);
+				if(strcmp($Ekdoseis, $ekdoseis) == 0)
+				{
+					if($array[$ISBN] == 0)
+					{
+						$keeper[] = $row;
+						$array[$ISBN] = 1;
+						$telos++;	
+					}
+				}
+			}	
 		}
 		
 		if($telos !== 0)
@@ -161,17 +317,13 @@
 							Τύπος: $tupos_suggrammatos<br/>
 							Διαθέτης/Εκδότης: $diatheths_ekdoths<br/>										
 						</div>
-					</div>";
+					</div>";	
 			}
 		}
-		else
-		{
-			echo"<div id=\"kefalides_selidwn\">
-			<a href=\"../suntheth_anazhthsh.php\">Δεν βρέθηκαν Συγγράμματα</a>
-			</div>";
-			exit();	
-		}	
-				
+			
+		
+		mysqli_close($con);
+		
 		?>
         
     </div>

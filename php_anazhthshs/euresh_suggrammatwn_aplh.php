@@ -239,6 +239,8 @@
 			</div>";
 			exit();	
 		}
+		
+		mysqli_close($con);
     ?>
     </div>
     
