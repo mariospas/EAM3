@@ -38,6 +38,13 @@
         // Connects to your Database
         $con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
         header('Content-Type: text/html; charset=UTF-8');
+		
+		mysqli_query($con, 'SET character_set_results=utf8');
+		mysqli_query($con, 'SET names=utf8');
+		mysqli_query($con, 'SET character_set_client=utf8');
+	    mysqli_query($con, 'SET character_set_connection=utf8');
+		mysqli_query($con, 'SET character_set_results=utf8');
+		mysqli_query($con, 'SET collation_connection=utf8_general_ci');
         
         //mysqli_query('SET NAMES utf8');
         

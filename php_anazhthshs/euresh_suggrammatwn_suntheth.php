@@ -36,6 +36,13 @@
 		
 		$con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
 		
+		mysqli_query($con, 'SET character_set_results=utf8');
+		mysqli_query($con, 'SET names=utf8');
+		mysqli_query($con, 'SET character_set_client=utf8');
+	    mysqli_query($con, 'SET character_set_connection=utf8');
+		mysqli_query($con, 'SET character_set_results=utf8');
+		mysqli_query($con, 'SET collation_connection=utf8_general_ci');
+		
 		//Elegxei an brethhkan apotelesmata
 		$telos = 0;
 		
