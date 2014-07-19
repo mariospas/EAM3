@@ -944,3 +944,42 @@ input[type=submit]#sub_search
 	height:2px;
 	background-color:#333;	
 }
+
+/*****************************************************************/
+
+#anaskophsh
+{
+	width:auto;
+	height:auto;
+	margin-top:30px;
+	background-color:#F1F1F1;
+	border:2px solid #008ED3;	
+	-webkit-border-radius: 5px 5px 5px 5px;
+	-moz-border-radius: 5px 5px 5px 5px;
+	border-radius: 5px 5px 5px 5px;
+	text-align:left;
+	padding-top:10px;
+	padding-bottom:10px;
+	
+}
+
+#blue_l
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	color:#008ED3;
+	display:inline-block;
+	font-weight:bold;
+	margin-left:15px;
+}
+
+#black_l
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:15px;
+	color:#333;
+	display:inline-block;
+	font-weight:bold;
+	margin-left:8px;
+}
+
