@@ -33,7 +33,9 @@
     	<?php include("include_with_php/gen_menu.php"); ?>  	
         
         <div id="kefalides_selidwn">
-        ΕΠΙΛΕΞΤΕ ΙΔΡΥΜΑ        
+        ΕΠΙΛΕΞΤΕ ΙΔΡΥΜΑ
+        <br/> 
+        <br/>               
         </div>        
         
         <div id="id_sug">
@@ -43,6 +45,8 @@
         <div id="eth" style="display:none;">
             <div id="kefalides_selidwn">
             ΕΠΙΛΕΞΤΕ ΣΧΟΛΗ (ΙΔΡΥΜΑ: ΕΘΙΝΚΟ ΚΑΠΟΔΙΣΤΡΙΑΚΟ ΠΑΝΕΠΙΣΤΗΜΙΟ ΑΘΗΝΩΝ)
+            <br/> 
+	        <br/>
             </div>
             
             <div id="id_sug">
@@ -52,6 +56,8 @@
             <div id="pl"  style="display:none;">
                 <div id="kefalides_selidwn">
                 ΣΥΓΓΡΑΜΜΑΤΑ (ΕΚΠΑ: ΠΛΗΡΟΦΟΡΙΚΗ ΚΑΙ ΤΗΛΕΠΙΚΟΙΝΩΝΙΕΣ)
+                <br/> 
+		        <br/>
                 </div>
                 <?php
                     $con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
@@ -98,6 +104,8 @@
            <div id="fi"  style="display:none;">
                 <div id="kefalides_selidwn">
                 ΣΥΓΓΡΑΜΜΑΤΑ (ΕΚΠΑ: ΦΙΛΟΛΟΓΙΑ)
+                <br/> 
+        		<br/>
                 </div>
                 Παρουσίαση διαθέσιμων συγγραμμάτων
            </div>
@@ -113,6 +121,8 @@
         <div id="pe" style="display:none;">
             <div id="kefalides_selidwn">
            		 ΕΠΙΛΕΞΤΕ ΣΧΟΛΗ (ΙΔΡΥΜΑ: ΠΑΝΕΠΙΣΤΗΜΙΟ ΠΕΙΡΑΙΩΣ)
+                 <br/> 
+        		 <br/>
             </div>
             
             <div id="id_sug">
@@ -122,6 +132,8 @@
             <div id="oik"  style="display:none;">
                 <div id="kefalides_selidwn">
                 ΣΥΓΓΡΑΜΜΑΤΑ (ΠΑΠΕΙ: ΟΙΚΟΝΟΜΙΚΗ ΕΠΙΣΤΗΜΗ)
+                <br/> 
+		        <br/>
                 </div>
                 Παρουσίαση διαθέσιμων συγγραμμάτων
             </div>
@@ -133,6 +145,8 @@
             <div id="na"  style="display:none;">
                 <div id="kefalides_selidwn">
                 ΣΥΓΓΡΑΜΜΑΤΑ (ΠΑΠΕΙ: ΝΑΥΤΙΛΙΑΚΕΣ ΣΠΟΥΔΕΣ)
+                <br/> 
+		        <br/>
                 </div>
                 Παρουσίαση διαθέσιμων συγγραμμάτων
            </div>
