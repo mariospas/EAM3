@@ -39,10 +39,10 @@ $("#rolos").change(function ()
 				var vals = [];
 									
 				switch(key) {
-					case 'EKPA':
+					case 'Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών':
 						vals = data.EKPA.split(",");
 						break;
-					case 'PAPI':
+					case 'Πανεπιστήμιο Πειραιώς':
 						vals = data.PAPI.split(",");
 						break;
 					case 'base':

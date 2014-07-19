@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Εγγραφή</title>
 <link rel="stylesheet" type="text/css" href="./css/style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="scripts/saveDataAndFill.js"></script>
@@ -43,7 +43,7 @@
 				<input type="text" id="taxudromio" name="taxudromio"  required/></p>
                 <br/>
                 <p><label>Κωδικός πρόσβασης :</label>
-				<input type="password" id="password" name="password"  required/></p>
+				<input type="password" id="password" name="password" required/></p>
                 <br/>
                 <p><label>Επιβεβαίωση κωδικού πρόσβασης :</label>
 				<input type="password" id="passwordconf" name="passwordconf" oninput="check(this)"  required/></p>
@@ -73,8 +73,8 @@
                         <br />
                         <select id="idruma" name="idruma"  >
                             <option value="base"> </option>
-                            <option value="EKPA">Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών</option>
-                            <option value="PAPI">Πανεπιστήμιο Πειραιώς</option>
+                            <option value="Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών">Εθνικό Καποδιστριακό Πανεπιστήμιο Αθηνών</option>
+                            <option value="Πανεπιστήμιο Πειραιώς">Πανεπιστήμιο Πειραιώς</option>
                         </select></p>
                         <br/>
                         <p><label >Τμήμα :</label>
