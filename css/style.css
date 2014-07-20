@@ -1045,3 +1045,36 @@ input[type=submit]#sub_search
 	width:auto;
 	margin-top:10px;
 }
+
+#more_info
+{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	font-weight:bold;
+	color:#D96C00;
+}
+
+#1
+{
+	display:none;	
+}
+
+#2
+{
+	display:none;	
+}
+
+#3
+{
+	display:none;	
+}
+
+#4
+{
+	display:none;	
+}
+
+#5
+{
+	display:none;	
+}

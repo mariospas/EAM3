@@ -66,6 +66,9 @@
 						$sql = "SELECT * FROM Mathhmata;";
 						$results = mysqli_query($con, $sql); 
 						
+						$counter = 1;
+						$library = array();
+						
 						while($row = mysqli_fetch_assoc($results))
 						{
 							extract($row);
@@ -85,6 +88,12 @@
 									while($ura = mysqli_fetch_assoc($more))
 									{
 										extract($ura);
+										/***********************************/
+										
+										$ulo = ($con, "SELECT Bibliopwleia_idBibliopwleia FROM Bibliopwleia_has_Suggrammata WHERE ");
+										
+										/***********************************/
+																				
 										echo "<div id=\"parousiash_1\">
 												 <div id=\"eikona\"><img src=\"$eikona\" />
 												 </div>
@@ -96,13 +105,32 @@
 													$etos_ekdoshs
 													$ekdoseis
 													ISBN[$ISBN]
+													
+													<div id=\"more_info\" onclick=\"myfunction('$counter')\">ΟΔΗΓΙΕΣ ΠΑΡΑΛΑΒΗΣ</div>
+													<div id=\"$counter\">
+														<div id=\"more_more\">
+															<table>
+															<tr>
+															Διεύθυνση
+															 
+															Ταχυδρομικός Κώδικας
+															Email
+															Fax
+															Σταθερό Τηλέφωνο
+															Ώρες Λειτουργίας
+															Σημείο στο χάρτη
+															</table>
+															
+														</div>
+													</div>
+													
 												 </div>
-											  </div>";	
+											  </div>";
+											  
+										$counter++;
 									}
-									
 								}
-							}				
-							
+							}
 						}
 						
 						mysqli_close($con);
