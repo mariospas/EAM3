@@ -63,7 +63,7 @@ function print_secure_content()
 					  <ul>
 						<li>Ανασκόπηση στοιχείων και Επεξεργασία προφίλ χρήστη</li>
 						<li>Ιστορικό χρήσης</li>
-						<li><a href=\"phpScripts/logout.php\">Αποσύνδεση</a></li>
+						<li><a href=\"logout.php\">Αποσύνδεση</a></li>
 					  </ul> 
 					
 				  </div>                     

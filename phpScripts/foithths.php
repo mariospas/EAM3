@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<link rel="stylesheet" type="text/css" href="../../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script src="../../scripts/drop_down_log_in.js"></script>
-<script src="../../scripts/lean-slider.js"></script>
-<link rel="stylesheet" href="../../css/lean-slider.css" type="text/css" />
-<link rel="stylesheet" href="../../css/slider-style.css" type="text/css" />
+<script src="../scripts/drop_down_log_in.js"></script>
+<script src="../scripts/lean-slider.js"></script>
+<link rel="stylesheet" href="../css/lean-slider.css" type="text/css" />
+<link rel="stylesheet" href="../css/slider-style.css" type="text/css" />
 
 
 </head>
@@ -19,10 +19,10 @@
 	<!--ARXH PANW MEROS-->
 	<div id="header_gen">
     
-    	<?php include("include_with_php/logo.php"); ?>    	
+    	<?php include("foithths/include_with_php/logo.php"); ?>    	
         
         <?php 
-			include("../config.php");
+			include("config.php");
 		?>
         
     </div>
@@ -31,7 +31,7 @@
     <!--ARXH MESSAIO MEROS-->
   <div id="mid">
     
-    	<?php include("include_with_php/gen_menu.php"); ?> 
+    	<?php include("foithths/include_with_php/gen_menu.php"); ?> 
         
         
         <div id="button_small" class="portokali">
@@ -60,10 +60,10 @@
             <div class="slider-wrapper">
                 <div id="slider">
                     <div class="slide1">
-                        <img src="images/banner_arxiki_selida/1.jpg" alt="" />
+                        <img src="foithths/images/banner_arxiki_selida/1.jpg" alt="" />
                     </div>
                     <div class="slide2">
-                        <img src="images/banner_arxiki_selida/2.jpg" alt="" />
+                        <img src="foithths/images/banner_arxiki_selida/2.jpg" alt="" />
                     </div>
                 </div>
                 <div id="slider-direction-nav"></div>
@@ -102,11 +102,11 @@ type="application/x-shockwave-flash">
     
     <!--ARXH KATW MEROS-->
     <div id="footer">    	
-		<?php include("include_with_php/stadar_bottom_menu_gen.php"); ?>         
-      <?php include("include_with_php/downer_footer.php"); ?>      
+		<?php include("foithths/include_with_php/stadar_bottom_menu_gen.php"); ?>         
+      <?php include("foithths/include_with_php/downer_footer.php"); ?>      
     </div>
     
-    <?php include("include_with_php/copyrights.php"); ?> 
+    <?php include("foithths/include_with_php/copyrights.php"); ?> 
     <!--TELOS KATW MEROS-->
     
 </div>

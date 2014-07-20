@@ -56,7 +56,7 @@ else
 			$_SESSION[logged]=true;
 			//print"<p>you have loged in successfully</p>";
 			print_secure_content();
-			echo "<meta http-equiv=\"refresh\" content=\"0;url=../index.php\"/>";
+			echo "<meta http-equiv=\"refresh\" content=\"0;url=phpScripts/foithths.php\"/>";
 		}
 		else if($number_of_rows==0)
 		{

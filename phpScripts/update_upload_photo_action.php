@@ -3,9 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Εγγραφή</title>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script src="scripts/checkFileSize.js"></script>
+<script src="../scripts/checkFileSize.js"></script>
 <style>
 
 #cropBTN
@@ -25,9 +25,9 @@
 	<!--ARXH PANW MEROS-->
 	<div id="header_gen">
     
-    	<?php include("include_with_php/logo.php"); ?>    	
+    	<?php include("../include_with_php/logo.php"); ?>    	
         
-        <?php include("phpScripts/config.php"); ?>
+        <?php include("config.php"); ?>
         
     </div>
     
@@ -35,7 +35,7 @@
     
     <!--ARXH MESSAIO MEROS-->
 <div id="mid">
-		<?php include("include_with_php/gen_menu.php"); ?>
+		<?php include("../include_with_php/gen_menu.php"); ?>
 		<?php
         
             //error_reporting(E_ALL);
@@ -50,7 +50,7 @@
             
             
             //This is the directory where images will be saved
-            $target = "phpScripts/foithths/dokupload/xrhstes/";
+            $target = "foithths/dokupload/xrhstes/";
             $target = $target . basename( $_FILES['photo']['name']);
             //echo $target;
             //echo "<br>";
@@ -62,7 +62,7 @@
             $pic = ($_FILES['photo']['name']);
             if(empty($pic))
             {
-                $target = "phpScripts/foithths/dokupload/xrhstes/default.jpg";
+                $target = "foithths/dokupload/xrhstes/default.jpg";
             }
             $role = ($_POST['role']);
             $username = ($_POST['onomaxristi']);
@@ -180,7 +180,7 @@
 							</div>
                     ";
             
-            
+            		echo "{$target}";
             
                 }
                 else {
@@ -200,11 +200,11 @@
     
     <!--ARXH KATW MEROS-->
     <div id="footer">    	
-		<?php include("include_with_php/stadar_bottom_menu_gen.php"); ?>         
-        <?php include("include_with_php/downer_footer.php"); ?>      
+		<?php include("../include_with_php/stadar_bottom_menu_gen.php"); ?>         
+        <?php include("../include_with_php/downer_footer.php"); ?>      
     </div>
     
-    <?php include("include_with_php/copyrights.php"); ?> 
+    <?php include("../include_with_php/copyrights.php"); ?> 
     <!--TELOS KATW MEROS-->
 	
 

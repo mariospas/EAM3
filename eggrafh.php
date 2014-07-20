@@ -29,7 +29,7 @@
         </div>
         
         <div id="main_form">
-        	<form method="post" action="update_upload_photo_action.php" enctype="multipart/form-data">
+        	<form method="post" action="phpScripts/update_upload_photo_action.php" enctype="multipart/form-data">
             	<p><label>Όνομα :</label>
 				<input type="text" id="onoma" name="onoma" required/></p>
                 <br/>
