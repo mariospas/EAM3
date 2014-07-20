@@ -34,25 +34,17 @@
     
     	<?php include("foithths/include_with_php/gen_menu.php"); ?> 
         
-        <div id="gen_menu">
+        <div id="gen_menu2">
             <div id="button_small" class="portokali">
-            <a href="#"><h4><strong>Αρχική Σελίδα</strong></h4></a>
+            <a href="#"><h4><strong>Δήλωση Συγγραμμάτων</strong></h4></a>
             </div>
             
             <div id="button_small" class="portokali">
-            <a href="#"><h4><strong>Συγγράμματα Σχολών</strong></h4></a> 
+            <a href="#"><h4><strong>Ανταλλαγή Συγγραμμάτων</strong></h4></a> 
             </div>
             
             <div id="button_small" class="portokali">
-            <a href="#"><h4><strong>Αναζήτηση Συγγραμμάτων</strong></h4></a> 
-            </div>
-            
-            <div id="button_small" class="portokali">
-            <a href="#"><h4><strong>Επικοινωνία</strong></h4></a>
-            </div>
-            
-            <div id="button_small" class="portokali">
-            <a href="#"><h4><strong>FAQ</strong></h4></a>
+            <a href="#"><h4><strong>Οδηγίες Δήλωσης και Ανταλλαγής</strong></h4></a> 
             </div>
          </div>
      	

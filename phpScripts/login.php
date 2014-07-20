@@ -47,29 +47,29 @@ function print_secure_content()
 				<li id=\"signup\">
 				  
 				  <div>
-						<canvas id=\"canvas1\" width=\"50\" height=\"50\" style=\"background:url({$_SESSION[photog]}); background-repeat:no-repeat; background-size:50px 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;\">
+						<canvas id=\"canvas1\" width=\"40\" height=\"40\" style=\"background:url({$_SESSION[photog]}); background-repeat:no-repeat; background-size:50px 50px; -webkit-border-radius: 50px; -moz-border-radius: 50px; border-radius: 50px;\">
 						This text is displayed if your browser does not support HTML5 Canvas.
 						</canvas>
 				  </div>
 				  
 				  
 				</li>
-				 <li id=\"login\">
-				  <a id=\"login-trigger\" href=\"#\">
-					<h3>$_SESSION[user] </h3>
+				 <li id=\"foit\">
+				  <a id=\"foit-panel\" href=\"#\">
+					<h1>$_SESSION[user] <span>▼</span> </h1>
 				  </a>
-				  <div id=\"login-content\">
+				  <div id=\"foit-content\">
 					
 					  <ul>
-						<li>Ανασκόπηση στοιχείων και Επεξεργασία προφίλ χρήστη</li>
-						<li>Ιστορικό χρήσης</li>
-						<li><a href=\"logout.php\">Αποσύνδεση</a></li>
+						• Ανασκόπηση στοιχείων και Επεξεργασία προφίλ χρήστη <br>
+						• Ιστορικό χρήσης <br>
+						• <a href=\"logout.php\">Αποσύνδεση</a>
 					  </ul> 
 					
 				  </div>                     
 				</li>
 			  </ul>
-		</nav>
+			</nav>
 	  ";
 }
 

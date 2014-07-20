@@ -9,3 +9,15 @@ $(document).ready(function(){
       else $(this).find('span').html('&#x25BC;')
     })
 });
+
+
+
+$(document).ready(function(){
+  $('#foit-panel').click(function(){
+    $(this).next('#foit-content').slideToggle();
+    $(this).toggleClass('active');          
+    
+    if ($(this).hasClass('active')) $(this).find('span').html('&#x25B2;')
+      else $(this).find('span').html('&#x25BC;')
+    })
+});
