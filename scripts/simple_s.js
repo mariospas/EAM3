@@ -12,7 +12,7 @@ function myFunction(name)
 	}
 }
 
-function myFunction(name_1, name_2, name_2)
+function myFunction_1(name_1, name_2, name_3)
 {
 	if(document.getElementById(name_1).style.display == "none")
 	{

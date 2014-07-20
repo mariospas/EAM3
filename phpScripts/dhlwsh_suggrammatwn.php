@@ -37,38 +37,45 @@
         <form>
         
         <div id="click_drop" >
-        
-        	<div id="belaki_or_1" onclick="myFunction('belaki_or_1', 'belaki_kath_1', 'plhrof_bibliwn_1')">
-            	<img height="10" width="10" src="../images/belakia/oriz.png" />
-                <div id="drop_biblia">2ο εξάμηνο</div>
+        	<div id="drop_biblia">            	
+        		<div id="belaki_or_1" onclick="myFunction_1('belaki_or_1', 'belaki_kath_1', 'plhrof_bibliwn_1')"><img height="10" width="10" src="images/belakia/oriz.png" />  2ο εξάμηνο
+                </div>
+                
+                <div id="belaki_kath_1" onclick="myFunction_1('belaki_or_1', 'belaki_kath_1', 'plhrof_bibliwn_1')"><img height="10" width="10" src="images/belakia/kath.png" />  2ο εξάμηνο
+                </div>
+                
+                <div id="plhrof_bibliwn_1">
+                
+					<?php
+                    
+						                        
+                    
+                    ?>
+                
+                </div>
+               
             </div>
-            
-            <div id="belaki_kath_1">
-            	<img height="10" width="10" src="../images/belakia/kath.png" />
-                <div id="drop_biblia">2ο εξάμηνο</div>
-            </div>
-            
-            <div id="plhrof_bibliwn_1">
-            
-            </div>
-            
+        	
         </div>
         
-        <div id="drop_biblia" onclick="myFunction_2('belaki_or_2', 'belaki_kath_2', 'plhrof_bibliwn_2')">
-        
-            <div id="belaki_or_2">
-            	<img height="10" width="10" src="../images/belakia/oriz.png" />
-            </div>
-            
-            <div id="belaki_kath_2">
-            	<img height="10" width="10" src="../images/belakia/kath.png" />
-            </div>
-            
-            <div id="plhrof_bibliwn_2">
-            
-            </div>
-            
+        <div id="click_drop" >
+        	
+         	 <div id="drop_biblia">            	
+        		<div id="belaki_or_2" onclick="myFunction_1('belaki_or_2', 'belaki_kath_2', 'plhrof_bibliwn_2')"><img height="10" width="10" src="images/belakia/oriz.png" />  4ο εξάμηνο
+                </div>
+                
+                <div id="belaki_kath_2" onclick="myFunction_1('belaki_or_2', 'belaki_kath_2', 'plhrof_bibliwn_2')"><img height="10" width="10" src="images/belakia/kath.png" />  4ο εξάμηνο
+                </div>
+                
+                <div id="plhrof_bibliwn_2">
+                
+                </div>
+               
+            </div>   
+        	            
         </div>
+        
+        
         
         </form>
         
