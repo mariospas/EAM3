@@ -41,7 +41,7 @@
             
             /**/
             $user_onoma = "jimmakos";
-            $pass_kwd = "123";
+            $pass_kwd = "1234";
             /**/
             
             $kwdikos = $_POST['kwdikos_'];
