@@ -3,12 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<link rel="stylesheet" type="text/css" href="./css/style.css">
+<link rel="stylesheet" type="text/css" href="../../css/style.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-<script src="scripts/drop_down_log_in.js"></script>
-<script src="scripts/lean-slider.js"></script>
-<link rel="stylesheet" href="css/lean-slider.css" type="text/css" />
-<link rel="stylesheet" href="css/slider-style.css" type="text/css" />
+<script src="../../scripts/drop_down_log_in.js"></script>
+<script src="../../scripts/lean-slider.js"></script>
+<link rel="stylesheet" href="../../css/lean-slider.css" type="text/css" />
+<link rel="stylesheet" href="../../css/slider-style.css" type="text/css" />
 
 
 </head>
@@ -22,16 +22,38 @@
     	<?php include("include_with_php/logo.php"); ?>    	
         
         <?php 
-			include("phpScripts/config.php");
+			include("../config.php");
 		?>
         
     </div>
     <!--TELOS PANW MEROS-->
     
     <!--ARXH MESSAIO MEROS-->
-    <div id="mid">
+  <div id="mid">
     
-    	<?php include("include_with_php/gen_menu.php"); ?>  	
+    	<?php include("include_with_php/gen_menu.php"); ?> 
+        
+        
+        <div id="button_small" class="portokali">
+        <a href="#"><h4><strong>Αρχική Σελίδα</strong></h4></a>
+        </div>
+        
+        <div id="button_small" class="portokali">
+        <a href="#"><h4><strong>Συγγράμματα Σχολών</strong></h4></a> 
+        </div>
+        
+        <div id="button_small" class="portokali">
+        <a href="#"><h4><strong>Αναζήτηση Συγγραμμάτων</strong></h4></a> 
+        </div>
+        
+        <div id="button_small" class="portokali">
+        <a href="#"><h4><strong>Επικοινωνία</strong></h4></a>
+        </div>
+        
+        <div id="button_small" class="portokali">
+        <a href="#"><h4><strong>FAQ</strong></h4></a>
+        </div>
+     	
         
         <div id="banner">
         
@@ -81,7 +103,7 @@ type="application/x-shockwave-flash">
     <!--ARXH KATW MEROS-->
     <div id="footer">    	
 		<?php include("include_with_php/stadar_bottom_menu_gen.php"); ?>         
-        <?php include("include_with_php/downer_footer.php"); ?>      
+      <?php include("include_with_php/downer_footer.php"); ?>      
     </div>
     
     <?php include("include_with_php/copyrights.php"); ?> 

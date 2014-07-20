@@ -27,14 +27,14 @@
     
     	<?php include("include_with_php/logo.php"); ?>    	
         
-        <?php include("include_with_php/get_in.php"); ?>
+        <?php include("phpScripts/config.php"); ?>
         
     </div>
     
     <!--TELOS PANW MEROS-->
     
     <!--ARXH MESSAIO MEROS-->
-    <div id="mid">
+<div id="mid">
 		<?php include("include_with_php/gen_menu.php"); ?>
 		<?php
         
@@ -50,7 +50,7 @@
             
             
             //This is the directory where images will be saved
-            $target = "dokupload/xrhstes/";
+            $target = "phpScripts/foithths/dokupload/xrhstes/";
             $target = $target . basename( $_FILES['photo']['name']);
             //echo $target;
             //echo "<br>";
@@ -62,7 +62,7 @@
             $pic = ($_FILES['photo']['name']);
             if(empty($pic))
             {
-                $target = "dokupload/xrhstes/default.jpg";
+                $target = "phpScripts/foithths/dokupload/xrhstes/default.jpg";
             }
             $role = ($_POST['role']);
             $username = ($_POST['onomaxristi']);
@@ -206,7 +206,7 @@
     
     <?php include("include_with_php/copyrights.php"); ?> 
     <!--TELOS KATW MEROS-->
-
+	
 
 
 

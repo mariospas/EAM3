@@ -10,7 +10,7 @@
             <h3>Σύνδεση </h3>
           </a>
           <div id="login-content">
-            <form>
+            <form method="post" action="../phpScripts/config.php" enctype="multipart/form-data">
               <div id="inputs">
                  <input id="email" name="user[username]" size="30" type="text" placeholder="Username ή e-mail" required/> 
               </div>
