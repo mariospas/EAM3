@@ -127,13 +127,13 @@
                 	
                     <label>*Νέος Κωδικός Πρόσβασης</label>
                     <br/>                    
-                    <input type="text" id="n_code" name="n_code" />
+                    <input type="password" id="n_code" name="n_code" />
                     <br/>
                     <br/>
                     
                     <label>*Επιβεβαίωση Νέου Κωδικού Πρόσβασης</label>
                     <br/>                    
-                    <input type="text" id="n_code_con" name="n_code_con" />
+                    <input type="password" id="n_code_con" name="n_code_con" />
                     <br/>
                     <br/>
                     
