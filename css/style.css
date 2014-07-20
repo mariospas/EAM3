@@ -877,6 +877,9 @@ input[type=submit]#sub_search
 	display: inline-block;
 	height:auto;
 	width:auto;	
+    -moz-box-shadow: 0px 0px 25px gray;
+	 -webkit-box-shadow: 0px 0px 25px gray;
+	 box-shadow: 0px 0px 25px gray;
 }
 
 #keimeno_sug
@@ -1033,4 +1036,12 @@ input[type=submit]#sub_search
 #plhrof_bibliwn_2
 {
 	display:none;
+}
+
+#parousiash_1
+{
+	height:auto;
+	margin-top:15px;
+	width:auto;
+	margin-top:10px;
 }

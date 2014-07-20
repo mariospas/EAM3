@@ -48,7 +48,64 @@
                 
 					<?php
                     
-						                        
+						$con = mysqli_connect("localhost", "root", "134711Kk", "eam3");
+						header('Content-Type: text/html; charset=UTF-8');
+						
+						mysqli_query($con, 'SET character_set_results=utf8');
+						mysqli_query($con, 'SET names=utf8');
+						mysqli_query($con, 'SET character_set_client=utf8');
+						mysqli_query($con, 'SET character_set_connection=utf8');
+						mysqli_query($con, 'SET character_set_results=utf8');
+						mysqli_query($con, 'SET collation_connection=utf8_general_ci');
+						
+						/**/
+						$user_onoma = "jimmakos";
+						$pass_kwd = "123";
+						/**/
+						
+						$sql = "SELECT * FROM Mathhmata;";
+						$results = mysqli_query($con, $sql); 
+						
+						while($row = mysqli_fetch_assoc($results))
+						{
+							extract($row);
+							if($eksamhno == 1)
+							{  
+								echo"<strong>[$kwdikos_mathhmatos]</strong>"." "."<strong>$onoma_mathhmatos</strong>"."<br/>";
+								
+								$er = "SELECT * FROM Suggrammata_has_Mathhmata WHERE Mathhmata_kwdikos_mathhmatos = '$kwdikos_mathhmatos'";
+								
+								$res = mysqli_query($con, $er);
+								
+								while($ora = mysqli_fetch_assoc($res))
+								{
+									extract($ora);
+									
+									$more = mysqli_query($con, "SELECT * FROM Suggrammata WHERE '$Suggrammata_ISBN' = ISBN;");
+									while($ura = mysqli_fetch_assoc($more))
+									{
+										extract($ura);
+										echo "<div id=\"parousiash_1\">
+												 <div id=\"eikona\"><img src=\"$eikona\" />
+												 </div>
+												 <div id=\"keimeno_sug\">
+												 	[$kwdikos_bibliou]
+													$titlos
+													$tupos_suggrammmatos<br/>
+													$suggrafeas
+													$etos_ekdoshs
+													$ekdoseis
+													ISBN[$ISBN]
+												 </div>
+											  </div>";	
+									}
+									
+								}
+							}				
+							
+						}
+						
+						mysqli_close($con);
                     
                     ?>
                 
