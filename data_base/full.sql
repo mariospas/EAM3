@@ -251,6 +251,28 @@ VALUES
 6,
 '1115');
 
+INSERT INTO `eam3`.`Mathhmata`
+(`kwdikos_mathhmatos`,
+`onoma_mathhmatos`,
+`eksamhno`,
+`Grammateia_id`)
+VALUES
+(111,
+'ΓΡΑΜΜΙΚΗ ΑΛΓΕΒΡΑ',
+2,
+'1115');
+
+INSERT INTO `eam3`.`Mathhmata`
+(`kwdikos_mathhmatos`,
+`onoma_mathhmatos`,
+`eksamhno`,
+`Grammateia_id`)
+VALUES
+(222,
+'ΔΙΑΚΡΙΤΑ ΜΑΘΗΜΑΤΙΚΑ',
+4,
+'1115');
+
 /***************************************************************/
 
 INSERT INTO `eam3`.`Arithmoi_mhtrwou`

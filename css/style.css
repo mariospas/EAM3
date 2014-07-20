@@ -991,3 +991,46 @@ input[type=submit]#sub_search
 
 /*****************************************************/
 
+#click_drop
+{
+	margin-left:15px;
+	margin-top:20px;
+}
+
+#drop_biblia
+{
+	font-family:Arial, Helvetica, sans-serif;
+	color:black;
+	font-size:14px;
+	display:inline-block;
+}
+
+#belaki_or_1
+{
+	display:block;
+}
+
+#belaki_or_2
+{
+	display:block;
+}
+
+#belaki_kath_1
+{
+	display:none;
+}
+
+#belaki_kath_2
+{
+	display:none;
+}
+
+#plhrof_bibliwn_1
+{
+	display:none;
+}
+
+#plhrof_bibliwn_2
+{
+	display:none;
+}
