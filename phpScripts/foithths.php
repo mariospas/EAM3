@@ -4,6 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="../css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/foithths.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
 <script src="../scripts/drop_down_log_in.js"></script>
 <script src="../scripts/lean-slider.js"></script>
@@ -33,26 +34,27 @@
     
     	<?php include("foithths/include_with_php/gen_menu.php"); ?> 
         
-        
-        <div id="button_small" class="portokali">
-        <a href="#"><h4><strong>Αρχική Σελίδα</strong></h4></a>
-        </div>
-        
-        <div id="button_small" class="portokali">
-        <a href="#"><h4><strong>Συγγράμματα Σχολών</strong></h4></a> 
-        </div>
-        
-        <div id="button_small" class="portokali">
-        <a href="#"><h4><strong>Αναζήτηση Συγγραμμάτων</strong></h4></a> 
-        </div>
-        
-        <div id="button_small" class="portokali">
-        <a href="#"><h4><strong>Επικοινωνία</strong></h4></a>
-        </div>
-        
-        <div id="button_small" class="portokali">
-        <a href="#"><h4><strong>FAQ</strong></h4></a>
-        </div>
+        <div id="gen_menu">
+            <div id="button_small" class="portokali">
+            <a href="#"><h4><strong>Αρχική Σελίδα</strong></h4></a>
+            </div>
+            
+            <div id="button_small" class="portokali">
+            <a href="#"><h4><strong>Συγγράμματα Σχολών</strong></h4></a> 
+            </div>
+            
+            <div id="button_small" class="portokali">
+            <a href="#"><h4><strong>Αναζήτηση Συγγραμμάτων</strong></h4></a> 
+            </div>
+            
+            <div id="button_small" class="portokali">
+            <a href="#"><h4><strong>Επικοινωνία</strong></h4></a>
+            </div>
+            
+            <div id="button_small" class="portokali">
+            <a href="#"><h4><strong>FAQ</strong></h4></a>
+            </div>
+         </div>
      	
         
         <div id="banner">

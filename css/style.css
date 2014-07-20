@@ -354,7 +354,7 @@ li
 {
 	float: left;
 	height: 34px;
-	background-color: #008ED3;
+	
 	width: auto;
 	/*padding-left:15px;
 	padding-right:15px;*/
@@ -373,9 +373,9 @@ li
 	box-shadow: 0px 0px 25px #F1FF0E;
 }
 
-#button_small .portokali
+.blue
 {
-	background-color:#ca5b02;
+	background-color: #008ED3;
 }
 
 #outer_banner
