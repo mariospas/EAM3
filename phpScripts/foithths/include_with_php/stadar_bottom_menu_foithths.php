@@ -12,7 +12,7 @@
 
 <div id="upper_bottom">  
     <div id="bot_left">
-        <a href="foithths.php"><img width="48" height-"47" src="../images/footer/eudoxus-mikro-logo.png" /></a>
+        <a href="foithths.php"><img width="48" height="47" src="../images/footer/eudoxus-mikro-logo.png" /></a>
         <a href="foithths.php"><p><br/><strong>Αρχική Σελίδα</strong></p></a>
         <a href="idrumata_suggrammata.php"><p><strong>Συγγράμματα Σχολών</strong></p></a>
         <a href="aplh_anazhthsh.php"><p><strong>Αναζήτηση Συγγραμμάτων</strong></p></a>

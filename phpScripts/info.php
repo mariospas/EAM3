@@ -20,11 +20,23 @@
 	<!--ARXH PANW MEROS-->
 	<div id="header_gen">
     
-    	<?php include("foithths/include_with_php/logo.php"); ?>    	
+    	<?php 
+			include("config2.php");
+		?>
         
         <?php 
-			include("config.php");
-		?>
+			if(isset($_SESSION[user]))
+			{
+				include("foithths/include_with_php/logo.php"); 
+			}
+			else if(!isset($_SESSION[user]))
+			{
+				echo "<div id=\"logo\">
+						<a href=\"../index.php\"><img src=\"../images/logo.png\" /></a>
+					  </div>
+					 ";
+			}
+		 ?>    	
         
         <?php
 			if(isset($_SESSION[user]))
@@ -42,7 +54,35 @@
     <div id="mid">
     
     	<?php
-			 include("foithths/include_with_php/gen_menu.php"); 
+			 if(isset($_SESSION[user]))
+			{
+				include("foithths/include_with_php/gen_menu.php"); 
+			}
+			else
+			{
+				echo "<div id=\"gen_menu\">
+						<div id=\"button_small\" class=\"blue\">
+						<a href=\"../index.php\"><h4><strong>Αρχική Σελίδα</strong></h4></a>
+						</div>
+						
+						<div id=\"button_small\" class=\"blue\">
+						<a href=\"idrumata_suggrammata.php\"><h4><strong>Συγγράμματα Σχολών</strong></h4></a> 
+						</div>
+						
+						<div id=\"button_small\" class=\"blue\">
+						<a href=\"aplh_anazhthsh.php\"><h4><strong>Αναζήτηση Συγγραμμάτων</strong></h4></a> 
+						</div>
+						
+						<div id=\"button_small\" class=\"blue\">
+						<a href=\"#\"><h4><strong>Επικοινωνία</strong></h4></a>
+						</div>
+						
+						<div id=\"button_small\" class=\"blue\">
+						<a href=\"#\"><h4><strong>FAQ</strong></h4></a>
+						</div>
+					</div>
+					";
+			}
 			
 			if(isset($_SESSION[user]))
 			{
@@ -84,7 +124,26 @@
 	  
 		  if(!isset($_SESSION[user]))
 		  {		  
-			include("foithths/include_with_php/stadar_bottom_menu_gen.php"); 
+			echo "<div id=\"upper_bottom\">  
+					<div id=\"bot_left\">
+						<a href=\"../index.php\"><img width=\"48\" height=\"47\" src=\"../images/footer/eudoxus-mikro-logo.png\" /></a>
+						<a href=\"../index.php\"><p><br/><strong>Αρχική Σελίδα</strong></p></a>
+						<a href=\"idrumata_suggrammata.php\"><p><strong>Συγγράμματα Σχολών</strong></p></a>
+						<a href=\"aplh_anazhthsh.php\"><p><strong>Αναζήτηση Συγγραμμάτων</strong></p></a>
+						<a href=\"#\"><p><strong>Επικοινωνία</strong></p></a>
+						<a href=\"#\"><p><strong>Συχνές Ερωτήσεις</strong></p></a>
+					</div>
+					
+					<div id=\"bot_center\">
+						<a href=\"../../../eggrafh.php\"><p style=\"color:#CD5A00;\"><br/><strong>Εγγραφή</strong></p></a>
+						<a href=\"../../../index.php\"><p style=\"color:black;\"><strong>Σύνδεση</strong></p></a>
+					</div>
+					
+					<div id=\"bot_right\">
+						<a href=\"https://twitter.com/eudoxusgr\"><img width=\"43\" height=\"42\" src=\"../images/footer/twit.png\" /></a>
+					</div>
+				</div>
+				";
 		  }
 		  else if(isset($_SESSION[user]))
 		  {

@@ -140,7 +140,7 @@
         VALUES('$name','$epitheto','$username','$email','$password','$thl','$target','$idrima','$tmhma','$eksamhno','$aritmos_mhtroo')";
             $results = mysqli_query($con, $sql);
             if($results) echo "<div id=\"kefalides_selidwn\">Η εγγραφή ολοκληρώθηκε με επιτυχία  <br></div>
-								<meta http-equiv=\"refresh\" content=\"5;url=index.php\"/>
+								<meta http-equiv=\"refresh\" content=\"5;url=../index.php\"/>
 								";
             else 
 			{

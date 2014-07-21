@@ -57,7 +57,7 @@
 		mysqli_query($con, 'SET collation_connection=utf8_general_ci');
 		
 		/**********/
-		$user_onoma = "mariospas";		
+		$user_onoma = $_SESSION[user];		
 		/*********/
 		
 		$telos = 0;
